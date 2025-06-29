@@ -4,7 +4,7 @@ const About = () => {
   const stats = [
     { label: 'Total Projects', value: 6 },
     { label: 'Certificates', value: 6 },
-    { label: 'Years of Experience', value: 1 }
+    { label: 'Internships', value: 2 }
   ];
 
   return (
