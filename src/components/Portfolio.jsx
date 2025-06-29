@@ -57,8 +57,8 @@ const Portfolio = () => {
     title: 'Fitness Tracker',
     description: 'Fitness website for hackthon',
     image: 'image/fibit.png',
-    link: 'https://code-alpha-task-nu.vercel.app/',
-    git:'https://github.com/23335a0504raju/CodeAlpha_Task2',
+    link: 'https://naga.pythonanywhere.com/',
+    git:'https://github.com/23335a0504raju/',
     tech: ['Html', 'Django', 'Vercel', 'Stripe API'],
     features: [
      
