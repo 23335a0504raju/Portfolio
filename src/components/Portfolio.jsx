@@ -53,6 +53,20 @@ const Portfolio = () => {
     ],
     role: 'Lead Developer & ML Engineer'
   },
+    {
+    title: 'Fitness Tracker',
+    description: 'Fitness website for hackthon',
+    image: 'image/fibit.png',
+    link: 'https://code-alpha-task-nu.vercel.app/',
+    git:'https://github.com/23335a0504raju/CodeAlpha_Task2',
+    tech: ['Html', 'Django', 'Vercel', 'Stripe API'],
+    features: [
+     
+      'Fitbit integration',
+      'Points generation and doctor appointments'
+    ],
+    role: 'Full Stack Developer'
+  },
   {
     title: '4 SEED - Farm Direct',
     description: 'Direct-to-consumer agricultural marketplace eliminating middlemen to benefit both farmers and buyers.',
@@ -94,22 +108,7 @@ const Portfolio = () => {
       'Admin dashboard analytics'
     ],
     role: 'Frontend Developer Intern'
-  },
-  {
-    title: 'Fitness Tracker',
-    description: 'Fitness website for hackthon',
-    image: 'image/codealpha.png',
-    link: 'https://code-alpha-task-nu.vercel.app/',
-    git:'https://github.com/23335a0504raju/CodeAlpha_Task2',
-    tech: ['Html', 'Django', 'Vercel', 'Stripe API'],
-    features: [
-     
-      'Fitbit integration',
-      'Points generation and doctor appointments'
-    ],
-    role: 'Full Stack Developer'
   }
-
   ];
 
   const techStack = [
@@ -269,17 +268,7 @@ const Portfolio = () => {
                       ))}
                     </div>
 
-                      <div className="flex flex-wrap gap-2 mb-4">
-                      {project.role.map((role, i) => (
-                        <span
-                          key={i}
-                          className="text-xs px-2 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20"
-                        >
-                          {role}
-                          
-                        </span>
-                      ))}
-                    </div>
+    
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.features.map((features, i) => (
@@ -294,7 +283,7 @@ const Portfolio = () => {
                     </div>
                     
                     <a
-                      href={project.link}
+                      href={project.git}
                       className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
                     >
                       View Git Hub
@@ -312,6 +301,7 @@ const Portfolio = () => {
                         />
                       </svg>
                     </a>
+                    <br></br>
                     
                     <a
                       href={project.git}
