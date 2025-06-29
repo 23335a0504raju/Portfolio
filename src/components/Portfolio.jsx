@@ -30,6 +30,7 @@ const Portfolio = () => {
     description: 'A collaborative platform connecting students across campuses for group projects, knowledge sharing, and academic networking.',
     image: 'image/campus.png',
     link: 'https://campus-colab.vercel.app/',
+    git:'https://github.com/23335a0504raju/CampusColab',
     tech: ['React', 'Django REST Framework', 'Vercel', 'Render'],
     features: [
       'Real-time collaboration tools',
@@ -43,6 +44,7 @@ const Portfolio = () => {
     description: 'Comprehensive inventory management system with machine learning-powered stock predictions and automated reordering.',
     image: 'image/inventory.png',
     link: 'https://inventory-pi-smoky.vercel.app/',
+    git:'https://github.com/23335a0504raju/Inventory',
     tech: ['React', 'Django REST', 'Vercel', 'Render', 'TensorFlow.js'],
     features: [
       'ML-based demand forecasting',
@@ -56,6 +58,7 @@ const Portfolio = () => {
     description: 'Direct-to-consumer agricultural marketplace eliminating middlemen to benefit both farmers and buyers.',
     image: 'image/4seed.png',
     link: 'http://4seed.infinityfreeapp.com/',
+    git:'https://github.com/23335a0504raju/4seed',
     tech: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'jQuery', 'MySQL'],
     features: [
       'Farm-fresh produce marketplace',
@@ -69,6 +72,7 @@ const Portfolio = () => {
     description: 'Ride-sharing platform for travelers to connect and share journeys, reducing costs and environmental impact.',
     image: 'image/travel.png',
     link: 'https://travelpool.infinityfreeapp.com/',
+    git:'https://github.com/23335a0504raju/Travel',
     tech: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'jQuery', 'Google Maps API'],
     features: [
       'Route matching algorithm',
@@ -82,6 +86,7 @@ const Portfolio = () => {
     description: 'Feature-rich online shopping platform developed during internship with personalized recommendations.',
     image: 'image/codealpha.png',
     link: 'https://code-alpha-task-nu.vercel.app/',
+    git:'https://github.com/23335a0504raju/CodeAlpha_Task2',
     tech: ['React', 'Django REST', 'Vercel', 'Stripe API'],
     features: [
      
@@ -89,6 +94,20 @@ const Portfolio = () => {
       'Admin dashboard analytics'
     ],
     role: 'Frontend Developer Intern'
+  },
+  {
+    title: 'Fitness Tracker',
+    description: 'Fitness website for hackthon',
+    image: 'image/codealpha.png',
+    link: 'https://code-alpha-task-nu.vercel.app/',
+    git:'https://github.com/23335a0504raju/CodeAlpha_Task2',
+    tech: ['Html', 'Django', 'Vercel', 'Stripe API'],
+    features: [
+     
+      'Fitbit integration',
+      'Points generation and doctor appointments'
+    ],
+    role: 'Full Stack Developer'
   }
 
   ];
@@ -250,6 +269,18 @@ const Portfolio = () => {
                       ))}
                     </div>
 
+                      <div className="flex flex-wrap gap-2 mb-4">
+                      {project.role.map((role, i) => (
+                        <span
+                          key={i}
+                          className="text-xs px-2 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                        >
+                          {role}
+                          
+                        </span>
+                      ))}
+                    </div>
+
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.features.map((features, i) => (
                         <span
@@ -261,9 +292,29 @@ const Portfolio = () => {
                         </span>
                       ))}
                     </div>
-
+                    
                     <a
                       href={project.link}
+                      className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+                    >
+                      View Git Hub
+                      <svg
+                        className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </a>
+                    
+                    <a
+                      href={project.git}
                       className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
                     >
                       View Project
