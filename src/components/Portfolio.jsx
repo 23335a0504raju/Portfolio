@@ -304,7 +304,7 @@ const Portfolio = () => {
                     <br></br>
                     
                     <a
-                      href={project.git}
+                      href={project.link}
                       className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
                     >
                       View Project
