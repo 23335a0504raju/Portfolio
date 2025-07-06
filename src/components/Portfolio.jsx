@@ -485,6 +485,155 @@ const Portfolio = () => {
               </a>
             </div>
           </motion.div>
+
+            {/* Certificate 5 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="p-6 relative">
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                Introduction to GitHub Copilot course
+              </h3>
+              <p className="text-gray-300 text-sm mb-4">GitHub Copilot is an incredible tool — it’s like pair programming with AI! 🤖 It has boosted my productivity and helped me explore alternative code patterns much faster.</p>
+              <a
+                href="https://drive.google.com/file/d/10Re6aFaGoKxM5IoGYnjZ8k5lBg2RxKSw/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              >
+                View Certificate
+                <svg
+                  className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+
+            {/* Certificate 6 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="p-6 relative">
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                Digital Business Skills By HP
+              </h3>
+              <p className="text-gray-300 text-sm mb-4">Completed six certified cources provided by HP, AI for Beginners,Customer Experience (CX) for Business Success,Agile Project Management,Introduction to Cybersecurity Awareness,Data Science & Analytics,Introduction to Digital Business Skills</p>
+              <a
+                href="https://drive.google.com/file/d/1L_3Gx6nRi8Slt31-0LpiBv4p3uVgPoxf/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              >
+                View Certificate
+                <svg
+                  className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+
+            {/* Certificate 7 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="p-6 relative">
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                Professional Development provided by HP
+              </h3>
+              <p className="text-gray-300 text-sm mb-4">Completed Resume Writing and Job Interviewing,Effective Leadership,Success Mindset</p>
+              <a
+                href="https://drive.google.com/file/d/1mWXvsGB_OteeZ3mdZr7N4B1CYTW1q-m_/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              >
+                View Certificate
+                <svg
+                  className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+          {/* certificate-8 */}
+            <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="p-6 relative">
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                AWS's Solutions Architecture on Forage
+              </h3>
+              <p className="text-gray-300 text-sm mb-4">Designed and simple and scalable hosting architecture based on Elastic
+ Beanstalk for a client experiencing significant growth and slow response
+ times.</p>
+              <a
+                href="https://drive.google.com/file/d/1s-98UMACRj1yT7BhL1hP6Adl01amcjAB/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              >
+                View Certificate
+                <svg
+                  className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
         </motion.div>
       )}
 
