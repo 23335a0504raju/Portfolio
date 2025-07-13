@@ -24,7 +24,7 @@ const Contact = () => {
     {
       label: 'Download CV',
       icon: <FaFileDownload size={28} />,
-      link: 'https://drive.google.com/file/d/1Xz-oYZw0b6HAR6Nd7uxxj4vjfyrxJTuR/view?usp=drive_link',
+      link: 'https://drive.google.com/file/d/13LcDSbtXt8zWO-uZNnc5EzrD-gHsSZNy/view?usp=drive_link',
       description: 'Grab my latest resume.',
     }
   ];

@@ -61,12 +61,13 @@ const About = () => {
               <p className="text-gray-300 text-lg leading-relaxed">
                Web Developer | Machine Learning Enthusiast | AI Model Builder<br/>
                I don't just learn technology—I apply it to build meaningful solutions that matter. 
+               
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group relative overflow-hidden px-10 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full text-white font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
-                onClick={() => window.open("https://drive.google.com/file/d/1Xz-oYZw0b6HAR6Nd7uxxj4vjfyrxJTuR/view?usp=drive_link", "_blank")}
+                onClick={() => window.open("https://drive.google.com/file/d/13LcDSbtXt8zWO-uZNnc5EzrD-gHsSZNy/view?usp=drive_link", "_blank")}
               >
                 <span className="relative z-10">Download CV</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
