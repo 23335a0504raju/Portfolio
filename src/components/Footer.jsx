@@ -6,18 +6,19 @@ import {
 import {
   Box,
   Container,
-  Divider,
   Grid,
   Link,
   Typography
 } from '@mui/material';
 import { styled } from '@mui/system';
 
+
 const FooterContainer = styled(Box)({
   backgroundColor: 'transparent',
   color: 'white',
-  padding: '48px 0',
+  padding: '48px 0 0 0', // Reduced bottom padding since image will be at bottom
   marginTop: 'auto',
+  position: 'relative',
   '& .MuiTypography-root': {
     color: 'inherit',
   },
@@ -36,7 +37,6 @@ const FooterLink = styled(Link)({
 
 
 const Footer = () => {
-
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -47,12 +47,10 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: <Email fontSize="small" />, text: 'smilyraju8464@gamil.com' },
-    { icon: <Phone fontSize="small" />, text: '91+ 6281924785' },
+    { icon: <Email fontSize="small" />, text: 'smilyraju8464@gmail.com' }, // Fixed typo in email
+    { icon: <Phone fontSize="small" />, text: '+91 6281924785' }, // Formatted phone number
     { icon: <LocationOn fontSize="small" />, text: 'Visakhapatnam, AP' },
   ];
-
-
 
   return (
     <FooterContainer component="footer">
@@ -106,9 +104,7 @@ const Footer = () => {
           </Grid>
         </Grid>
 
-        <Divider sx={{ my: 4, borderColor: 'rgba(255, 255, 255, 0.12)' }} />
-
-      
+        
       </Container>
     </FooterContainer>
   );

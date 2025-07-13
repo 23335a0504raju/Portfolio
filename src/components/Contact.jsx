@@ -1,5 +1,7 @@
+import { styled } from '@mui/system';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
+import banner from "../assets/foot.png";
 
 const Contact = () => {
   const contacts = [
@@ -28,6 +30,17 @@ const Contact = () => {
       description: 'Grab my latest resume.',
     }
   ];
+
+  const BannerImage = styled('img')({
+  width: '100%',
+  height: 'auto',
+  marginTop: '32px',
+  objectFit: 'cover',
+  display: 'block',
+  '@media (max-width: 600px)': {
+    height: '120px', // Adjust for mobile
+  },
+});
 
   return (
     <section
@@ -91,6 +104,11 @@ const Contact = () => {
             </motion.a>
           ))}
         </div>
+        {/* Banner Image at the bottom */}
+                <BannerImage 
+                  src={banner} 
+                  alt="Personal Banner"
+                />
       </div>
     </section>
   );
