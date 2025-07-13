@@ -3,7 +3,7 @@ import profile from '../assets/profile.jpg';
 const About = () => {
   const stats = [
     { label: 'Total Projects', value: 6 },
-    { label: 'Certificates', value: 6 },
+    { label: 'Certificates', value: 10 },
     { label: 'Internships', value: 2 }
   ];
 
