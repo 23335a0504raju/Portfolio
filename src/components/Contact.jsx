@@ -1,4 +1,3 @@
-import { styled } from '@mui/system';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
 import banner from "../assets/foot.png";
@@ -9,13 +8,13 @@ const Contact = () => {
       label: 'Email Me',
       icon: <FaEnvelope size={28} />,
       link: 'mailto:smilyraju8464@gmail.com',
-      description: 'Let’s talk about your ideas.',
+      description: 'Lets talk about your ideas.',
     },
     {
       label: 'LinkedIn',
       icon: <FaLinkedin size={28} />,
       link: 'https://linkedin.com/in/raju-chowdavada-06b734347',
-      description: 'Let’s connect professionally.',
+      description: 'Lets connect professionally.',
     },
     {
       label: 'GitHub',
@@ -31,28 +30,11 @@ const Contact = () => {
     }
   ];
 
-  const BannerImage = styled('img')({
-  width: '100%',
-  height: 'auto',
-  marginTop: '32px',
-  objectFit: 'cover',
-  display: 'block',
-  '@media (max-width: 600px)': {
-    height: '120px', // Adjust for mobile
-  },
-});
-
   return (
     <section
       id="contact"
       className="min-h-screen py-24 text-white relative overflow-hidden"
     >
-      {/* Stylish Background Effects */}
-      {/* <div className="absolute inset-0 z-0">
-        <div className="absolute -top-20 -left-20 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
-      </div> */}
-
       <div className="relative z-10 container mx-auto px-6 lg:px-12">
         {/* Heading */}
         <motion.div
@@ -63,7 +45,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-            Let’s Connect
+            Let's Connect
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-lg">
             Open for freelance projects, collaborations or just a friendly chat.
@@ -85,10 +67,7 @@ const Contact = () => {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group relative p-6 rounded-2xl border border-gray-700 bg-[#1b1b1b]/80 backdrop-blur-xl shadow-lg transition-all hover:shadow-purple-500/10"
             >
-              {/* Hover Glow Line */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-tr from-purple-500/10 to-blue-500/10 rounded-2xl blur-sm"></div>
-
-              {/* Content */}
               <div className="relative flex flex-col items-center text-center space-y-4 z-10">
                 <div className="p-3 rounded-full bg-gradient-to-br from-purple-600/10 to-blue-500/10 text-purple-400 group-hover:text-white transition duration-300 animate-pulse">
                   {contact.icon}
@@ -104,11 +83,65 @@ const Contact = () => {
             </motion.a>
           ))}
         </div>
-        {/* Banner Image at the bottom */}
-                <BannerImage 
-                  src={banner} 
-                  alt="Personal Banner"
-                />
+
+        {/* Enhanced Banner Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-20 relative group"
+        >
+          {/* Glow Effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          {/* Border Animation */}
+          <div className="absolute inset-0 border-2 border-transparent group-hover:border-purple-500/30 rounded-xl transition-all duration-500 pointer-events-none"></div>
+          
+          {/* Banner Image */}
+          <motion.img
+            src={banner}
+            alt="Personal Banner"
+            className="w-full h-auto rounded-xl shadow-2xl object-cover transform transition-all group-hover:scale-[1.01] group-hover:shadow-purple-500/20"
+            whileHover={{ 
+              scale: 1.005,
+              transition: { duration: 0.3 }
+            }}
+          />
+          
+          {/* Overlay Text (if your banner has space) */}
+          <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="bg-gradient-to-r from-black/80 to-transparent p-4 rounded-lg max-w-md">
+              <p className="text-sm font-medium">Ready to collaborate?</p>
+              <p className="text-xs text-gray-300 mt-1">Let's build something amazing together</p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Floating Particles Background */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-purple-500/10"
+            initial={{
+              x: Math.random() * 100,
+              y: Math.random() * 100,
+              width: Math.random() * 10 + 5,
+              height: Math.random() * 10 + 5,
+            }}
+            animate={{
+              y: [0, Math.random() * 100 - 50],
+              x: [0, Math.random() * 100 - 50],
+              transition: {
+                duration: Math.random() * 10 + 10,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }
+            }}
+          />
+        ))}
       </div>
     </section>
   );
