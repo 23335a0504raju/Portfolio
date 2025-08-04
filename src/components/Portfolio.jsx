@@ -738,6 +738,42 @@ const Portfolio = () => {
               </a>
               </div>
               </motion.div>
+              {/* Certificate 9 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="p-6 relative">
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                Data Analytics Job Simulation
+              </h3>
+              <p className="text-gray-300 text-sm mb-4"> Completed a Deloitte job simulation involving data analysis and forensic technology </p>
+              <a
+                href="https://drive.google.com/file/d/1sb4K5UNgzQzDUiRmB_VWe4e1b8ykQoeN/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              >
+                View Certificate
+                <svg
+                  className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
             </div>
             </div>
           </motion.div>
