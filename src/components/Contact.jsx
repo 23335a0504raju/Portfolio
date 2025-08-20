@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaCode, FaEnvelope, FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
 import banner from "../assets/foot.png";
 
 const Contact = () => {
   const contacts = [
-    {
+     {
       label: 'Email Me',
       icon: <FaEnvelope size={28} />,
-      link: 'mailto:smilyraju8464@gmail.com',
+      link: 'https://mail.google.com/mail/?view=cm&fs=1&to=smilyraju8464@gmail.com',
       description: 'Lets talk about your ideas.',
     },
     {
@@ -23,6 +23,12 @@ const Contact = () => {
       description: 'Browse my open source work.',
     },
     {
+      label: 'LeetCode',
+      icon: <FaCode size={28} />,
+      link: 'https://leetcode.com/u/Raju_Ch8464/', 
+      description: 'Check out my coding skills.',
+    },
+    {
       label: 'Download CV',
       icon: <FaFileDownload size={28} />,
       link: 'https://drive.google.com/file/d/1tPc2k6ynffcOUUKsLE5ktwtzq-l-Wo9h/view?usp=drive_link',
@@ -35,7 +41,7 @@ const Contact = () => {
       id="contact"
       className="min-h-screen py-24 text-white relative overflow-hidden"
     >
-      <div className="relative z-10 container mx-auto px-6 lg:px-12">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,8 +58,8 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        {/* Cards Grid - Updated for 5 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
           {contacts.map((contact, index) => (
             <motion.a
               key={index}
@@ -65,20 +71,20 @@ const Contact = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="group relative p-6 rounded-2xl border border-gray-700 bg-[#1b1b1b]/80 backdrop-blur-xl shadow-lg transition-all hover:shadow-purple-500/10"
+              className="group relative p-4 md:p-5 rounded-2xl border border-gray-700 bg-[#1b1b1b]/80 backdrop-blur-xl shadow-lg transition-all hover:shadow-purple-500/10"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-tr from-purple-500/10 to-blue-500/10 rounded-2xl blur-sm"></div>
-              <div className="relative flex flex-col items-center text-center space-y-4 z-10">
-                <div className="p-3 rounded-full bg-gradient-to-br from-purple-600/10 to-blue-500/10 text-purple-400 group-hover:text-white transition duration-300 animate-pulse">
+              <div className="relative flex flex-col items-center text-center space-y-3 z-10">
+                <div className="p-2 md:p-3 rounded-full bg-gradient-to-br from-purple-600/10 to-blue-500/10 text-purple-400 group-hover:text-white transition duration-300 animate-pulse">
                   {contact.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white group-hover:text-purple-300">
+                <h3 className="text-lg md:text-xl font-semibold text-white group-hover:text-purple-300">
                   {contact.label}
                 </h3>
-                <p className="text-sm text-gray-400 group-hover:text-gray-300">
+                <p className="text-xs md:text-sm text-gray-400 group-hover:text-gray-300 leading-tight">
                   {contact.description}
                 </p>
-                <span className="w-10 h-1 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 group-hover:scale-110 transition-transform mt-2"></span>
+                <span className="w-8 md:w-10 h-1 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 group-hover:scale-110 transition-transform mt-2"></span>
               </div>
             </motion.a>
           ))}

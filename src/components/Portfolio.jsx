@@ -774,6 +774,156 @@ const Portfolio = () => {
               </a>
             </div>
           </motion.div>
+
+  {/* Certificate 10 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="p-6 relative">
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+               Software Engineering Job Simulation
+              </h3>
+              <p className="text-gray-300 text-sm mb-4"> Completed Accenture Nordics's Software Engineering on Forage </p>
+              <a
+                href="https://drive.google.com/file/d/1I8oe2H4NQQWKCCX6GQuyhCYYjgv4LuD_/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              >
+                View Certificate
+                <svg
+                  className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+
+           {/* Certificate 11 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="p-6 relative">
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                Deloitte Australia Technology Job Simulation on Forage - June 2025
+              </h3>
+              <p className="text-gray-300 text-sm mb-4"> Completed a job simulation involving development and coding ,Wrote a proposal for creating a dashboard  </p>
+              <a
+                href="https://drive.google.com/file/d/1I8oe2H4NQQWKCCX6GQuyhCYYjgv4LuD_/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              >
+                View Certificate
+                <svg
+                  className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+
+           {/* Certificate 12 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="p-6 relative">
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+               GenAI Powered Data Analytics Job Simulation
+              </h3>
+              <p className="text-gray-300 text-sm mb-4"> Completed a job simulation involving AI-powered data analytics and strategy development for the Financial Services team at Tata iQ.
+Conducted exploratory data analysis (EDA) using GenAI tools to assess data quality, identify risk indicators, and structure insights for predictive modeling. </p>
+              <a
+                href="https://drive.google.com/file/d/1I8oe2H4NQQWKCCX6GQuyhCYYjgv4LuD_/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              >
+                View Certificate
+                <svg
+                  className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+
+           {/* Certificate 13 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="p-6 relative">
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+               Accenture UK Introduction to Technology Apprenticeship
+              </h3>
+              <p className="text-gray-300 text-sm mb-4"> Engaged in a dynamic dialogue as a technology apprentice at Accenture, exploring the attributes of successful technology apprentices, the versatile applications of technology across industries, and cutting-edge technology streams in collaboration with a senior counterpart.
+Demonstrated active participation through the completion of targeted multiple-choice questions, reinforcing practical comprehension of key themes discussed during the apprentice dialogue. This interactive approach enhanced the depth of understanding. </p>
+              <a
+                href="https://drive.google.com/file/d/1wkaiIXbXM_y3OZvkyViTSPfZEcblbrpv/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              >
+                View Certificate
+                <svg
+                  className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
             </div>
             </div>
           </motion.div>
