@@ -789,7 +789,7 @@ const Portfolio = () => {
               </h3>
               <p className="text-gray-300 text-sm mb-4"> Completed Accenture Nordics's Software Engineering on Forage </p>
               <a
-                href="https://drive.google.com/file/d/1I8oe2H4NQQWKCCX6GQuyhCYYjgv4LuD_/view?usp=drive_link"
+                href="https://drive.google.com/file/d/16XMEgkddLMRAz8B8F2DAt54doBHPo8GY/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
@@ -826,7 +826,7 @@ const Portfolio = () => {
               </h3>
               <p className="text-gray-300 text-sm mb-4"> Completed a job simulation involving development and coding ,Wrote a proposal for creating a dashboard  </p>
               <a
-                href="https://drive.google.com/file/d/1I8oe2H4NQQWKCCX6GQuyhCYYjgv4LuD_/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1praxyQCpluZVPG_vIZHjmqQdC5xOCV-o/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
