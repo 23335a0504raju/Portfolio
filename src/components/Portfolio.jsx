@@ -125,6 +125,18 @@ const Portfolio = () => {
       'Admin dashboard analytics'
     ],
     role: 'Frontend Developer Intern'
+  },
+  {
+    title: 'Object Detection',
+    description: 'Upload any image and detect objects in real-time.Annotated image returned with bounding boxes, labels, and confidence scores.Lightweight YOLOv8 nano model ensures fast inference with low memory usage.',
+    image: 'image/object.png',
+    link: 'https://objectdetection-1-d5cq.onrender.com/',
+    git:'https://github.com/23335a0504raju/ObjectDetection',
+    tech: ['React', 'Django REST', 'Render', 'Rest API'],
+    features: [
+      'Annotated image returned with bounding boxes',
+    ],
+    role: 'Full stack Developer'
   }
   ];
 
