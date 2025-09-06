@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import profile from '../assets/profile.jpg';
 const About = () => {
   const stats = [
-    { label: 'Total Projects', value: 6 },
+    { label: 'Total Projects', value: 7 },
     { label: 'Certificates', value: 13 },
     { label: 'Internships', value: 2 }
   ];
