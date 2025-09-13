@@ -5,7 +5,25 @@ const Home = () => {
   const [robotLoaded, setRobotLoaded] = useState(false);
   const [robotError, setRobotError] = useState(false);
   const [positions, setPositions] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
   const robotRef = useRef(null);
+
+  // Check if screen is mobile size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is a common breakpoint for tablets
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Listen for resize events
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
 
   const handleIframeLoad = () => {
     setRobotLoaded(true);
@@ -20,7 +38,7 @@ const Home = () => {
 
   // Function to update robot position randomly within screen boundaries
   const updateRobotPosition = useCallback(() => {
-    if (!robotLoaded || robotError) return;
+    if (!robotLoaded || robotError || isMobile) return;
     
     // Get the actual dimensions of the robot element
     const robotWidth = robotRef.current?.offsetWidth || 320;
@@ -43,20 +61,20 @@ const Home = () => {
     const newY = Math.random() * safeMaxY;
     
     setPositions({ x: newX, y: newY });
-  }, [robotLoaded, robotError]);
+  }, [robotLoaded, robotError, isMobile]);
 
   // Update robot position periodically
   useEffect(() => {
-    if (robotLoaded && !robotError) {
+    if (robotLoaded && !robotError && !isMobile) {
       const interval = setInterval(updateRobotPosition, 5000); // Move every 5 seconds
       return () => clearInterval(interval);
     }
-  }, [robotLoaded, robotError, updateRobotPosition]);
+  }, [robotLoaded, robotError, updateRobotPosition, isMobile]);
 
   // Handle window resize to keep robot within bounds
   useEffect(() => {
     const handleResize = () => {
-      if (robotLoaded && !robotError) {
+      if (robotLoaded && !robotError && !isMobile) {
         // Adjust position if needed when window is resized
         updateRobotPosition();
       }
@@ -64,51 +82,53 @@ const Home = () => {
     
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [robotLoaded, robotError, updateRobotPosition]);
+  }, [robotLoaded, robotError, updateRobotPosition, isMobile]);
 
   // Fallback component if iframe fails to load
   const RobotFallback = useCallback(() => (
-    <motion.div 
-      className="fixed w-64 h-64 flex items-center justify-center bg-black/10 rounded-2xl border border-purple-500/20 backdrop-blur-sm z-20"
-      animate={{
-        x: positions.x,
-        y: positions.y,
-      }}
-      transition={{
-        type: "spring",
-        damping: 20,
-        stiffness: 100,
-      }}
-      style={{
-        left: 0,
-        top: 0,
-      }}
-    >
-      <div className="text-center p-8">
-        <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
-          <svg 
-            className="w-12 h-12 text-white" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24" 
-            xmlns="http://www.w3.org/2000/svg"
+    !isMobile && (
+      <motion.div 
+        className="fixed w-64 h-64 flex items-center justify-center bg-black/10 rounded-2xl border border-purple-500/20 backdrop-blur-sm z-20"
+        animate={{
+          x: positions.x,
+          y: positions.y,
+        }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 100,
+        }}
+        style={{
+          left: 0,
+          top: 0,
+        }}
+      >
+        <div className="text-center p-8">
+          <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+            <svg 
+              className="w-12 h-12 text-white" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+          </div>
+          <p className="text-purple-300">3D Robot Preview</p>
+          <p className="text-sm text-gray-400 mt-2">Interactive 3D model would appear here</p>
+          <a 
+            href="https://my.spline.design/r4xbot-nPsJWDkJ93714OJ61yISQUZa/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block mt-4 px-4 py-2 bg-purple-700/80 hover:bg-purple-600/80 rounded-lg text-white transition-colors backdrop-blur-sm"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-          </svg>
+            View Robot
+          </a>
         </div>
-        <p className="text-purple-300">3D Robot Preview</p>
-        <p className="text-sm text-gray-400 mt-2">Interactive 3D model would appear here</p>
-        <a 
-          href="https://my.spline.design/r4xbot-nPsJWDkJ93714OJ61yISQUZa/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-block mt-4 px-4 py-2 bg-purple-700/80 hover:bg-purple-600/80 rounded-lg text-white transition-colors backdrop-blur-sm"
-        >
-          View Robot
-        </a>
-      </div>
-    </motion.div>
-  ), [positions.x, positions.y]);
+      </motion.div>
+    )
+  ), [positions.x, positions.y, isMobile]);
 
   return (
     <section
@@ -121,8 +141,8 @@ const Home = () => {
         <div className="absolute w-[500px] h-[500px] -bottom-1/4 -right-1/4 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      {/* Floating Robot - Positioned absolutely to travel the whole page */}
-      {!robotError ? (
+      {/* Floating Robot - Only show on non-mobile screens */}
+      {!isMobile && !robotError ? (
         <motion.div 
           ref={robotRef}
           className="fixed w-80 h-80 z-20"
