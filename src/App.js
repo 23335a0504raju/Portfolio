@@ -1,7 +1,9 @@
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import About from './components/About';
+import Connect from './components/Connect';
 import Contact from './components/Contact';
+import Eduation from './components/Eduation';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
@@ -48,8 +50,10 @@ function App() {
           <main className={showWelcome ? 'blur-background' : ''}>
            
             <About/>
+            <Eduation/>
             <Portfolio />
             <Contact />
+            <Connect/>
             
           </main>
           <Footer />
