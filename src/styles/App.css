@@ -329,6 +329,45 @@ section {
   animation: spin 1s linear infinite;
 }
 
+/* Add to your CSS file */
+.robot-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.robot-toggle:hover {
+  border-color: rgba(139, 92, 246, 0.8);
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.robot-toggle.active {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.8);
+}
+
+/* For mobile view, you might want to adjust the nav-links */
+@media (max-width: 768px) {
+  .nav-links {
+    /* Your existing mobile styles */
+  }
+  
+  .robot-toggle {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
+
+
+
+
 @keyframes spin {
   to {
     transform: rotate(360deg);

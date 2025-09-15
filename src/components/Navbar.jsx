@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaRobot, FaTimes } from 'react-icons/fa';
 
-const Navbar = () => {
+const Navbar = ({ robotActive, toggleRobot }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -21,11 +21,10 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Profile', href: '#profile' },
-    {name:'Education',href:'#education'},
+    { name: 'Education', href: '#education' },
     { name: 'Projects', href: '#portfolio' },
     { name: 'Contact', href: '#contact' },
-    {name:'Connect',href:'#connect'},
-    
+    { name: 'Connect', href: '#connect' },
   ];
 
   return (
@@ -43,6 +42,16 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          
+          {/* Robot Toggle Button */}
+          <button 
+            className={`robot-toggle ${robotActive ? 'active' : ''}`}
+            onClick={toggleRobot}
+            aria-label="Toggle Robot"
+          >
+            <FaRobot />
+            <span>{robotActive ? 'Hide Robot' : 'Show Robot'}</span>
+          </button>
         </nav>
         
         <button 

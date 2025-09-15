@@ -9,11 +9,19 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Portfolio from './components/Portfolio';
 import WelcomeCard from './components/WelcomeCard';
+import { RobotProvider } from './context/RobotContext';
 import './styles/App.css';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [showWelcome, setShowWelcome] = useState(false);
+
+
+   const [robotActive, setRobotActive] = useState(false);
+
+  const toggleRobot = () => {
+    setRobotActive(prev => !prev);
+  };
 
   useEffect(() => {
     
@@ -31,6 +39,7 @@ function App() {
 
   return (
     <div className="App">
+       <RobotProvider>
       {isLoading ? (
         <div className="loader">
           <div className="loader-spinner"></div>
@@ -44,8 +53,8 @@ function App() {
              
           </AnimatePresence>
           
-          <Navbar />
-          <Home/>
+          <Navbar robotActive={robotActive} toggleRobot={toggleRobot} />
+          <Home robotActive={robotActive} onRobotToggle={toggleRobot} />
           {/* <Hero /> */}
           <main className={showWelcome ? 'blur-background' : ''}>
            
@@ -60,7 +69,9 @@ function App() {
         </>
        
       )}
+      </RobotProvider>
     </div>
+    
   );
 }
 

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-const Home = () => {
+const Home = ({ robotActive, onRobotToggle }) => {
   const [robotLoaded, setRobotLoaded] = useState(false);
   const [robotError, setRobotError] = useState(false);
   const [positions, setPositions] = useState({ x: 0, y: 0 });
@@ -38,7 +38,7 @@ const Home = () => {
 
   // Function to update robot position randomly within screen boundaries
   const updateRobotPosition = useCallback(() => {
-    if (!robotLoaded || robotError || isMobile) return;
+    if (!robotActive || !robotLoaded || robotError || isMobile) return;
     
     // Get the actual dimensions of the robot element
     const robotWidth = robotRef.current?.offsetWidth || 320;
@@ -61,20 +61,20 @@ const Home = () => {
     const newY = Math.random() * safeMaxY;
     
     setPositions({ x: newX, y: newY });
-  }, [robotLoaded, robotError, isMobile]);
+  }, [robotActive, robotLoaded, robotError, isMobile]);
 
   // Update robot position periodically
   useEffect(() => {
-    if (robotLoaded && !robotError && !isMobile) {
+    if (robotActive && robotLoaded && !robotError && !isMobile) {
       const interval = setInterval(updateRobotPosition, 5000); // Move every 5 seconds
       return () => clearInterval(interval);
     }
-  }, [robotLoaded, robotError, updateRobotPosition, isMobile]);
+  }, [robotActive, robotLoaded, robotError, updateRobotPosition, isMobile]);
 
   // Handle window resize to keep robot within bounds
   useEffect(() => {
     const handleResize = () => {
-      if (robotLoaded && !robotError && !isMobile) {
+      if (robotActive && robotLoaded && !robotError && !isMobile) {
         // Adjust position if needed when window is resized
         updateRobotPosition();
       }
@@ -82,11 +82,11 @@ const Home = () => {
     
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [robotLoaded, robotError, updateRobotPosition, isMobile]);
+  }, [robotActive, robotLoaded, robotError, updateRobotPosition, isMobile]);
 
   // Fallback component if iframe fails to load
   const RobotFallback = useCallback(() => (
-    !isMobile && (
+    robotActive && !isMobile && (
       <motion.div 
         className="fixed w-64 h-64 flex items-center justify-center bg-black/10 rounded-2xl border border-purple-500/20 backdrop-blur-sm z-20"
         animate={{
@@ -128,7 +128,7 @@ const Home = () => {
         </div>
       </motion.div>
     )
-  ), [positions.x, positions.y, isMobile]);
+  ), [robotActive, positions.x, positions.y, isMobile]);
 
   return (
     <section
@@ -141,8 +141,8 @@ const Home = () => {
         <div className="absolute w-[500px] h-[500px] -bottom-1/4 -right-1/4 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      {/* Floating Robot - Only show on non-mobile screens */}
-      {!isMobile && !robotError ? (
+      {/* Floating Robot - Only show when robotActive is true and on non-mobile screens */}
+      {robotActive && !isMobile && !robotError ? (
         <motion.div 
           ref={robotRef}
           className="fixed w-80 h-80 z-20"
@@ -236,6 +236,25 @@ const Home = () => {
                 Contact Me
               </span>
             </a>
+            
+            {/* Robot Toggle Button */}
+            <button
+              onClick={onRobotToggle}
+              className="group px-8 py-4 rounded-full text-white font-medium border-2 border-purple-500/30 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center gap-2"
+            >
+              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                {robotActive ? 'Hide Robot' : 'Show Robot'}
+              </span>
+              <svg 
+                className="w-5 h-5 text-purple-400" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
+            </button>
           </motion.div>
 
           <motion.div
