@@ -189,8 +189,21 @@ const Portfolio = () => {
 ]
     }
   ];
+    const achievements = [
+    'Delivered 6+ full-stack applications with authentication, REST APIs, and cloud deployment (AWS, Vercel, Render), ensuring scalability and reliability.',
+    'Optimized API response times by 25% through query optimization, caching, and efficient state management.',
+    'Developed Smart Stock Management system with automated demand forecasting, reducing manual errors and improving decision-making.',
+    'Built a secure E-Commerce platform with authentication, payment integration, and an admin dashboard, enhancing user experience and business operations.',
+    'Finalist in a Hackathon – developed a blogging platform with authentication and role-based access in under 24 hours.',
+    'Solved 450+ coding problems on LeetCode and CodeChef, strengthening algorithmic thinking and problem-solving skills.',
+    'Deployed production-ready apps during internships, achieving 99.9% uptime with CI/CD and cloud integration.',
+    'Designed and deployed a TensorFlow.js-based stock prediction system, enabling automated reordering and demand forecasting.',
+    'Maintained a strong academic record with a CGPA of 8.36/10 while completing internships, certifications, and multiple live projects.'
+  ];
 
-  const tabList = ['projects', 'certificates', 'tech'];
+
+
+  const tabList = ['projects', 'certificates', 'tech','achievements'];
 
   return (
     <section
@@ -448,6 +461,40 @@ const Portfolio = () => {
             </a>
           </div>
         </motion.div>
+
+        {/* Certificate 3 */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="p-6 relative">
+            <h3 className="text-xl font-semibold mb-2 text-yellow-400">
+              AIML Internship
+            </h3>
+            <p className="text-gray-300 text-sm mb-4">Gained hands-on experience in Machine Learning, Data Analysis, and AI applications, working on practical projects to apply theoretical concepts.</p>
+            <a
+              href="https://drive.google.com/file/d/1fMXogVfGuIcRUZHsjBRsBQul13Ml-sQ4/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
+            >
+              View Certificate
+              <svg
+                className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </motion.div>
+
+
       </div>
     </div>
 
@@ -936,11 +983,85 @@ Demonstrated active participation through the completion of targeted multiple-ch
               </a>
             </div>
           </motion.div>
+
+
+
+          {/* Certificate 14 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="p-6 relative">
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+               Google for Developers
+              </h3>
+              <p className="text-gray-300 text-sm mb-4">The Google AI/ML Virtual Internship provided practical exposure to core concepts of Artificial Intelligence and Machine Learning, including data preprocessing, model building, evaluation, and deployment. It focused on applying ML algorithms to solve real-world problems and developing hands-on skills in Python, TensorFlow, and data analysis tools. </p>
+              <a
+                href="https://drive.google.com/file/d/1fMXogVfGuIcRUZHsjBRsBQul13Ml-sQ4/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+              >
+                View Certificate
+                <svg
+                  className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+
+
+
             </div>
             </div>
           </motion.div>
         
       )}
+
+       {activeTab === 'achievements' && (
+            <motion.div
+              key="achievements"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {achievements.map((achievement, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/40 to-gray-900/60 backdrop-blur-xl border border-gray-700/50 hover:border-purple-500/70 transition-all duration-500 p-8 shadow-2xl"
+                  >
+                    <div className="flex items-start">
+                      <div className="text-3xl mr-4 text-purple-400 transform group-hover:scale-110 transition-transform duration-300">
+                        🏆
+                      </div>
+                      <p className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed">
+                        {achievement}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
 
           {activeTab === 'tech' && (
         <motion.div
