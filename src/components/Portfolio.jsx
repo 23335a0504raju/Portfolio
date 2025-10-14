@@ -137,6 +137,31 @@ const Portfolio = () => {
       'Annotated image returned with bounding boxes',
     ],
     role: 'Full stack Developer'
+  },
+  {
+    title: 'N8N Automation',
+    description: 'Built a WhatsApp-controlled Google Drive automation workflow using n8n, deployed via Docker + Render, and integrated with Supabase PostgreSQL for logging.',
+    image: 'image/n8n.png',
+    link: 'https://n8n-s63m.onrender.com/',
+    git:'https://github.com/23335a0504raju/n8nAutomation',
+    video: 'https://drive.google.com/file/d/1Q5h_LfxFWdYPsnuMbdHslReYP5F35UmO/view?usp=drive_link',
+    tech: ['N8N', 'Java Script','Render','Docker','Automation'],
+    features: [
+      'This project demonstrates the power of no-code automation combined with scripting for real-world tasks.',
+    ],
+    role: 'N8n Automation'
+  },
+    {
+    title: 'Navi FrontEnd',
+    description: 'Built a frontend website totally usinf very smooth scrolling locomotive scroll.',
+    image: 'image/image.png',
+    link: 'https://clone-task-one.vercel.app/',
+    git:'https://github.com/23335a0504raju/CloneTask',
+    tech: ['Java Script','Vercel','React'],
+    features: [
+      'This project demonstrates the FrontEnd Skills and Clone of a project with smooth scrolling effects and animations.',
+    ],
+    role: 'N8n Automation'
   }
   ];
 
