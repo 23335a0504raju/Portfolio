@@ -78,6 +78,38 @@ const Portfolio = () => {
     ],
     role: 'Full Stack Developer'
   },
+    {
+    "title": "DocumentDB – AI-Powered Document Intelligence Hub",
+    "description": "A smart document management system that allows users to upload, organize, and query their files using RAG-based AI search. Supports document previews, secure access, and intelligent Q&A powered by OpenRouter LLMs.",
+    "image": "image/docintel.png",
+    "link": "https://document-db.vercel.app/",
+    "git": "https://github.com/23335a0504raju/DocumentDB",
+    "documentation": "https://document-db.vercel.app/",
+    "video": "https://www.linkedin.com/posts/raju-chowdavada-06b734347_ai-artificialintelligence-rag-activity-7405219264825073664-Gq0S",
+    "tech": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB Atlas",
+      "Mongoose",
+      "LangChain",
+      "OpenRouter API",
+      "JWT Authentication",
+      "Render (Backend Deployment)",
+      "Vercel (Frontend Deployment)"
+    ],
+    "features": [
+      "Upload, preview, download, and delete documents",
+      "AI-powered RAG search across selected documents",
+      "Document chunking + embedding + vector-based retrieval",
+      "Real-time conversational AI assistant",
+      "Query history with sources and references",
+      "Fully authenticated dashboard with analytics",
+      "Cloud-based file storage and global access"
+    ],
+    "role": "Full-Stack Developer (End-to-End Architecture, API Design, RAG Pipeline, Deployment)"
+  },
+
   {
     title: '4 SEED - Farm Direct',
     description: 'Direct-to-consumer agricultural marketplace eliminating middlemen to benefit both farmers and buyers.',
