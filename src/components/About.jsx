@@ -7,6 +7,8 @@ const About = () => {
     { label: 'Internships', value: 2 }
   ];
 
+
+
   return (
     <section
       id="profile"
@@ -59,9 +61,9 @@ const About = () => {
                 </span>
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-               Web Developer | Machine Learning Enthusiast | AI Model Builder<br/>
-               I don't just learn technology—I apply it to build meaningful solutions that matter. 
-               
+                Web Developer | Machine Learning Enthusiast | AI Model Builder<br />
+                I don't just learn technology—I apply it to build meaningful solutions that matter.
+
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -82,22 +84,22 @@ const About = () => {
               viewport={{ once: true }}
               className="relative"
             >
-             
-           <div className="aspect-square rounded-full relative w-96 h-96">
-                
+
+              <div className="aspect-square rounded-full relative w-96 h-96">
+
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 rounded-full animate-spin-slow blur-xl opacity-50"></div>
 
                 {/* Main circle */}
                 <div className="absolute inset-2 bg-gradient-to-br from-gray-900 to-black rounded-full p-4">
-                    <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-purple-500/10 to-blue-500/10 flex items-center justify-center">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-purple-500/10 to-blue-500/10 flex items-center justify-center">
                     <img
-                        src={profile}
-                        alt="Profile"
-                        className="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-300 cursor-pointer"
+                      src={profile}
+                      alt="Profile"
+                      className="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-300 cursor-pointer"
                     />
-                    </div>
+                  </div>
                 </div>
-                </div>
+              </div>
             </motion.div>
           </div>
 
