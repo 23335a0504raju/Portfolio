@@ -1,45 +1,56 @@
 import { motion } from 'framer-motion';
 import { FaCode, FaEnvelope, FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
+import emailBg from '../assets/email.svg';
 import banner from "../assets/foot.png";
+import githubBg from '../assets/github.svg';
+import leetcodeBg from '../assets/leetcode.svg';
+import linkedinBg from '../assets/linkedin.svg';
+import resumeBg from '../assets/resume.svg';
+import { PinContainer } from './ui/3d-pin';
 
 const Contact = () => {
   const contacts = [
-     {
+    {
       label: 'Email Me',
       icon: <FaEnvelope size={28} />,
       link: 'https://mail.google.com/mail/?view=cm&fs=1&to=smilyraju8464@gmail.com',
       description: 'Lets talk about your ideas.',
+      image: emailBg
     },
     {
       label: 'LinkedIn',
       icon: <FaLinkedin size={28} />,
       link: 'https://linkedin.com/in/raju-chowdavada-06b734347',
       description: 'Lets connect professionally.',
+      image: linkedinBg
     },
     {
       label: 'GitHub',
       icon: <FaGithub size={28} />,
       link: 'https://github.com/23335a0504raju',
       description: 'Browse my open source work.',
+      image: githubBg
     },
     {
       label: 'LeetCode',
       icon: <FaCode size={28} />,
-      link: 'https://leetcode.com/u/Raju_Ch8464/', 
+      link: 'https://leetcode.com/u/Raju_Ch8464/',
       description: 'Check out my coding skills.',
+      image: leetcodeBg
     },
     {
       label: 'Download CV',
       icon: <FaFileDownload size={28} />,
       link: 'https://drive.google.com/file/d/1jlWoA1ELx0KIQFRUt5AHsjI6Hf1kSi5d/view?usp=drive_link',
       description: 'Grab my latest resume.',
+      image: resumeBg
     }
   ];
 
   return (
     <section
       id="contact"
-      className="min-h-screen py-24 text-white relative overflow-hidden"
+      className="py-16 px-4 md:px-8 lg:px-16 text-gray-900 dark:text-white relative overflow-hidden"
     >
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12">
         {/* Heading */}
@@ -50,43 +61,29 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             Let's Connect
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto text-lg">
             Open for freelance projects, collaborations or just a friendly chat.
           </p>
         </motion.div>
 
-        {/* Cards Grid - Updated for 5 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+        {/* Cards Grid */}
+        <div className="flex flex-wrap items-center justify-center gap-10 max-w-7xl mx-auto">
           {contacts.map((contact, index) => (
-            <motion.a
-              key={index}
-              href={contact.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="group relative p-4 md:p-5 rounded-2xl border border-gray-700 bg-[#1b1b1b]/80 backdrop-blur-xl shadow-lg transition-all hover:shadow-purple-500/10"
-            >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-tr from-purple-500/10 to-blue-500/10 rounded-2xl blur-sm"></div>
-              <div className="relative flex flex-col items-center text-center space-y-3 z-10">
-                <div className="p-2 md:p-3 rounded-full bg-gradient-to-br from-purple-600/10 to-blue-500/10 text-purple-400 group-hover:text-white transition duration-300 animate-pulse">
-                  {contact.icon}
-                </div>
-                <h3 className="text-lg md:text-xl font-semibold text-white group-hover:text-purple-300">
-                  {contact.label}
-                </h3>
-                <p className="text-xs md:text-sm text-gray-400 group-hover:text-gray-300 leading-tight">
-                  {contact.description}
-                </p>
-                <span className="w-8 md:w-10 h-1 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 group-hover:scale-110 transition-transform mt-2"></span>
+            <div key={index} className="h-[20rem] flex items-center justify-center w-full sm:w-64 px-2">
+              <div className="hidden md:block w-full h-full">
+                <PinContainer title={contact.label} href={contact.link}>
+                  <ContactCardContent contact={contact} />
+                </PinContainer>
               </div>
-            </motion.a>
+              <div className="md:hidden w-full h-full flex items-center justify-center">
+                <a href={contact.link} target="_blank" rel="noopener noreferrer" className="block w-full h-[16rem] rounded-xl overflow-hidden relative shadow-lg bg-gray-900 border border-white/10">
+                  <ContactCardContent contact={contact} isMobile={true} />
+                </a>
+              </div>
+            </div>
           ))}
         </div>
 
@@ -99,25 +96,27 @@ const Contact = () => {
           className="mt-20 relative group"
         >
           {/* Glow Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
+          <div className="absolute inset-0 bg-gray-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
           {/* Border Animation */}
-          <div className="absolute inset-0 border-2 border-transparent group-hover:border-purple-500/30 rounded-xl transition-all duration-500 pointer-events-none"></div>
-          
+          <div className="absolute inset-0 border-2 border-transparent group-hover:border-gray-500/30 rounded-xl transition-all duration-500 pointer-events-none"></div>
+
           {/* Banner Image */}
-          <motion.img
-            src={banner}
-            alt="Personal Banner"
-            className="w-full h-auto rounded-xl shadow-2xl object-cover transform transition-all group-hover:scale-[1.01] group-hover:shadow-purple-500/20"
-            whileHover={{ 
-              scale: 1.005,
-              transition: { duration: 0.3 }
-            }}
-          />
-          
-          {/* Overlay Text (if your banner has space) */}
+          <div className="rounded-xl overflow-hidden shadow-xl">
+            <motion.img
+              src={banner}
+              alt="Personal Banner"
+              className="w-full h-auto object-cover transform transition-all group-hover:scale-[1.01]"
+              whileHover={{
+                scale: 1.005,
+                transition: { duration: 0.3 }
+              }}
+            />
+          </div>
+
+          {/* Overlay Text */}
           <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="bg-gradient-to-r from-black/80 to-transparent p-4 rounded-lg max-w-md">
+            <div className="bg-black/70 backdrop-blur-sm p-4 rounded-lg max-w-md">
               <p className="text-sm font-medium">Ready to collaborate?</p>
               <p className="text-xs text-gray-300 mt-1">Let's build something amazing together</p>
             </div>
@@ -126,11 +125,11 @@ const Contact = () => {
       </div>
 
       {/* Floating Particles Background */}
-      <div className="absolute inset-0 overflow-hidden z-0">
+      <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-purple-500/10"
+            className="absolute rounded-full bg-gray-500/10 dark:bg-gray-400/10"
             initial={{
               x: Math.random() * 100,
               y: Math.random() * 100,
@@ -150,6 +149,34 @@ const Contact = () => {
         ))}
       </div>
     </section>
+  );
+};
+
+const ContactCardContent = ({ contact, isMobile }) => {
+  return (
+    <div className={`flex flex-col p-4 tracking-tight sm:basis-1/2 w-[16rem] h-[16rem] ${isMobile ? 'text-white' : 'text-slate-100/50'}`}>
+      <h3 className={`max-w-xs !pb-2 !m-0 font-bold text-base ${isMobile ? 'text-white' : 'text-slate-100'}`}>
+        {contact.label}
+      </h3>
+      <div className="text-base !m-0 !p-0 font-normal">
+        <span className={`${isMobile ? 'text-gray-300' : 'text-slate-500'}`}>
+          {contact.description}
+        </span>
+      </div>
+      <div className="relative flex flex-1 w-full rounded-lg mt-4 overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+        <img
+          src={contact.image}
+          alt={contact.label}
+          className="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-500"
+        />
+        <div className="absolute inset-0 bg-black/40 hover:bg-black/20 transition-colors duration-500"></div>
+        <div className="relative z-10 w-full h-full flex items-center justify-center">
+          <div className="text-white transform scale-150 drop-shadow-lg filter">
+            {contact.icon}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

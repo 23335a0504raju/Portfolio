@@ -4,17 +4,49 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 body {
-margin: 0;
+  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+  /* primary blue */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+  /* primary dark blue */
 }
 
 code {
@@ -84,7 +116,7 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -94,12 +126,14 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
 /* Global Styles */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  /* height: 100%; - Removed to allow natural scrolling */
   overflow-x: hidden;
 }
 
@@ -110,13 +144,15 @@ html, body {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -1; /* Behind everything */
-  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  z-index: -1;
+  /* Behind everything */
+  background: transparent;
 }
 
 /* React root container */
 #root {
   position: relative;
-  z-index: 1; /* Above particles */
+  z-index: 1;
+  /* Above particles */
   min-height: 100vh;
 }

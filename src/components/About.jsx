@@ -1,136 +1,111 @@
 import { motion } from 'framer-motion';
-import profile from '../assets/profile.jpg';
+import LandingAccordionItem from './ui/interactive-image-accordion';
+import { Timeline } from './ui/timeline';
+
 const About = () => {
   const stats = [
-    { label: 'Total Projects', value: 9 },
-    { label: 'Certificates', value: 13 },
-    { label: 'Internships', value: 2 }
+    { label: 'Total Projects', value: '10+' },
+    { label: 'Certificates', value: '13+' },
+    { label: 'Years Experience', value: '2+' }
   ];
 
-
+  const timelineData = [
+    {
+      title: "2023 - Present",
+      content: (
+        <div>
+          <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">B.Tech including AI & ML</h4>
+          <p className="text-gray-700 dark:text-gray-300 font-medium mb-4">MVGR College of Engineering</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-4">
+            Pursuing Bachelor of Technology with a specialization in Artificial Intelligence and Machine Learning.
+            Maintaining a strong academic record with 8.36 CGPA.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium border border-gray-200 dark:border-gray-700">Data Structures</span>
+            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium border border-gray-200 dark:border-gray-700">Neural Networks</span>
+            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium border border-gray-200 dark:border-gray-700">Full Stack Dev</span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2020 - 2023",
+      content: (
+        <div>
+          <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Diploma in Computer Engineering</h4>
+          <p className="text-gray-700 dark:text-gray-300 font-medium mb-4">Govt Polytechnic Anakapalli</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-4">
+            Built a solid foundation in computer science principles, hardware, and software development.
+            Graduated with 83% distinction.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium border border-gray-200 dark:border-gray-700">C/C++</span>
+            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium border border-gray-200 dark:border-gray-700">Database Management</span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2019 - 2020",
+      content: (
+        <div>
+          <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Secondary Education</h4>
+          <p className="text-gray-700 dark:text-gray-300 font-medium mb-4">Jubilee English Medium School</p>
+          <p className="text-gray-600 dark:text-gray-400">
+            Completed secondary education with excellent academic performance (98%).
+            Developed early interest in mathematics and logic.
+          </p>
+        </div>
+      ),
+    },
+  ];
 
   return (
-    <section
-      id="profile"
-      className="min-h-screen py-20  text-white relative overflow-hidden"
-    >
-      {/* Animated background elements */}
-      {/* <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-[500px] h-[500px] top-0 right-0 bg-purple-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute w-[500px] h-[500px] bottom-0 left-0 bg-blue-500/5 rounded-full blur-3xl"></div>
-      </div> */}
-
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
-        >
-          {/* Header */}
-          <div className="text-center mb-16">
+    <section id="about" className="min-h-screen py-20 overflow-hidden">
+      {/* Hero Section with Accordion */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10 mb-20">
+        <div className="flex flex-col items-center justify-center space-y-12">
+          <div className="text-center space-y-6 max-w-3xl">
             <motion.h2
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold mb-4"
+              className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight"
             >
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-                About Me
-              </span>
+              Transforming Ideas into <br />
+              <span className="text-gray-900 dark:text-white">Digital Reality</span>
             </motion.h2>
-            <div className="h-1 w-20 mx-auto bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+            >
+              I am <span className="font-semibold text-gray-900 dark:text-white">Raju Chowdavada</span>, a passionate Full-Stack Developer and Machine Learning Enthusiast.
+              Explore my key skills and areas of expertise below.
+            </motion.p>
           </div>
 
-          {/* Main Content */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Text Section */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <h3 className="text-4xl font-bold leading-tight">
-                <span className="text-gray-300">Hello, I'm</span><br />
-                <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 text-transparent bg-clip-text">
-                  Raju Chowdavada
-                </span>
-              </h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                Web Developer | Machine Learning Enthusiast | AI Model Builder<br />
-                I don't just learn technology—I apply it to build meaningful solutions that matter.
-
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative overflow-hidden px-10 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full text-white font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
-                onClick={() => window.open("https://drive.google.com/file/d/1jlWoA1ELx0KIQFRUt5AHsjI6Hf1kSi5d/view?usp=drive_link", "_blank")}
-              >
-                <span className="relative z-10">Download CV</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </motion.button>
-            </motion.div>
-
-            {/* Profile Circle */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-
-              <div className="aspect-square rounded-full relative w-96 h-96">
-
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 rounded-full animate-spin-slow blur-xl opacity-50"></div>
-
-                {/* Main circle */}
-                <div className="absolute inset-2 bg-gradient-to-br from-gray-900 to-black rounded-full p-4">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-purple-500/10 to-blue-500/10 flex items-center justify-center">
-                    <img
-                      src={profile}
-                      alt="Profile"
-                      className="w-full h-full object-cover rounded-full transform hover:scale-110 transition-transform duration-300 cursor-pointer"
-                    />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Stats Section */}
+          {/* Interactive Accordion */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20"
+            className="w-full"
           >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 p-8 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-gray-400 font-medium">{stat.label}</div>
-                </div>
-              </motion.div>
-            ))}
+            <LandingAccordionItem />
           </motion.div>
-        </motion.div>
+        </div>
+      </div>
+
+      {/* Timeline Section */}
+      <div className="w-full">
+        <h3 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white">My Journey</h3>
+        <div className="h-1 w-20 mx-auto bg-blue-500 rounded-full mb-16"></div>
+        <Timeline data={timelineData} />
       </div>
     </section>
   );

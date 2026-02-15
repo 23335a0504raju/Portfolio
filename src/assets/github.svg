@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#24292e"/>
+  <rect x="50" y="50" width="300" height="200" rx="4" stroke="#6e7681" stroke-width="2" fill="none" opacity="0.5"/>
+  <text x="70" y="100" font-family="monospace" font-size="20" fill="#28a745" opacity="0.8">git commit -m "init"</text>
+  <text x="70" y="140" font-family="monospace" font-size="20" fill="#f1e05a" opacity="0.8">const dev = true;</text>
+  <text x="70" y="180" font-family="monospace" font-size="20" fill="#563d7c" opacity="0.8">import React from 'react';</text>
+  <circle cx="350" cy="250" r="30" fill="#6e7681" opacity="0.2"/>
+</svg>

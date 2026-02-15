@@ -25,42 +25,43 @@ const Connect = () => {
   };
 
   return (
-    <section id="connect" className="py-16 px-4 md:px-8 lg:px-16">
+    <section id="connect" className="py-16 px-4 md:px-8 lg:px-16 text-gray-900 dark:text-white">
       <div className="max-w-7xl mx-auto">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text"
+          className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white"
         >
           Get In Touch
         </motion.h2>
-        
-        <motion.p 
+
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-gray-400 text-center mb-12 max-w-2xl mx-auto"
+          className="text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto"
         >
           Have a question or want to work together? Send me a message and I'll get back to you as soon as possible.
         </motion.p>
 
-        <div className="flex flex-col lg:flex-row gap-8 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-8 items-stretch mb-20">
           {/* 3D Globe - Much larger with minimal border */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="w-full lg:w-4/5 h-[600px] lg:h-[700px] rounded-2xl overflow-hidden bg-transparent border border-gray-700/10"
+            className="w-full lg:w-4/5 h-[400px] lg:h-[700px] rounded-2xl overflow-hidden bg-transparent border border-gray-200 dark:border-gray-700"
           >
-            <iframe 
-              src="https://my.spline.design/earthdayandnight-chFec1DXGGjtUTxry6WIbl0o/" 
+            <iframe
+              src="https://my.spline.design/earthdayandnight-chFec1DXGGjtUTxry6WIbl0o/"
               frameBorder="0"
               width="100%"
               height="100%"
               title="3D Earth Globe"
               className="rounded-2xl"
-              style={{ background: 'transparent' }}
+              allowTransparency="true"
+              style={{ background: 'transparent', colorScheme: 'normal' }}
             />
           </motion.div>
 
@@ -69,12 +70,12 @@ const Connect = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="w-full lg:w-2/5 bg-gradient-to-br from-gray-800/10 to-gray-900/10 backdrop-blur-sm border border-gray-700/10 rounded-2xl p-6 md:p-10 shadow-xl"
+            className="w-full lg:w-2/5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 md:p-10 shadow-lg"
           >
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 gap-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Your Name
                   </label>
                   <input
@@ -84,13 +85,13 @@ const Connect = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-800/20 border border-gray-700/30 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                     placeholder="Enter your name"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Your Email
                   </label>
                   <input
@@ -100,14 +101,14 @@ const Connect = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-800/20 border border-gray-700/30 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                     placeholder="Enter your email"
                   />
                 </div>
               </div>
-              
+
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Your Message
                 </label>
                 <textarea
@@ -117,16 +118,16 @@ const Connect = () => {
                   onChange={handleChange}
                   required
                   rows="4"
-                  className="w-full px-4 py-3 rounded-lg bg-gray-800/20 border border-gray-700/30 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                   placeholder="Enter your message..."
                 />
               </div>
-              
+
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full py-3 px-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium rounded-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/20"
+                className="w-full py-3 px-6 bg-gray-900 hover:bg-black dark:bg-white dark:hover:bg-gray-200 dark:text-black text-white font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 Send Message
               </motion.button>
@@ -134,7 +135,7 @@ const Connect = () => {
           </motion.div>
         </div>
 
-        
+
       </div>
     </section>
   );
