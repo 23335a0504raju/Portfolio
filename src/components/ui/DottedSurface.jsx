@@ -9,7 +9,8 @@ export function DottedSurface({ className, ...props }) {
     const rendererRef = useRef(null);
 
     useEffect(() => {
-        if (!containerRef.current) return;
+        const container = containerRef.current;
+        if (!container) return;
 
         // --- 1. SETUP ---
         const SEPARATION = 100;
@@ -38,8 +39,8 @@ export function DottedSurface({ className, ...props }) {
         renderer.setClearColor(0x000000, 0);
 
         // Force clean the container to prevent duplicate canvases
-        containerRef.current.innerHTML = '';
-        containerRef.current.appendChild(renderer.domElement);
+        container.innerHTML = '';
+        container.appendChild(renderer.domElement);
         rendererRef.current = renderer;
 
         // --- 2. GEOMETRY & THEME LOGIC ---
@@ -130,9 +131,6 @@ export function DottedSurface({ className, ...props }) {
             geometry.dispose();
             material.dispose();
             renderer.dispose();
-
-            // Capture ref value to avoid React Hooks warning
-            const container = containerRef.current;
             if (container) {
                 container.innerHTML = '';
             }
