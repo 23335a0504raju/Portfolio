@@ -18,7 +18,7 @@ export function DottedSurface({ className, ...props }) {
         const numParticles = AMOUNTX * AMOUNTY;
 
         const scene = new THREE.Scene();
-        
+
         // Setup Camera
         const camera = new THREE.PerspectiveCamera(
             75,
@@ -35,8 +35,8 @@ export function DottedSurface({ className, ...props }) {
         });
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setClearColor(0x000000, 0); 
-        
+        renderer.setClearColor(0x000000, 0);
+
         // Force clean the container to prevent duplicate canvases
         containerRef.current.innerHTML = '';
         containerRef.current.appendChild(renderer.domElement);
@@ -125,13 +125,16 @@ export function DottedSurface({ className, ...props }) {
         return () => {
             window.removeEventListener('resize', handleResize);
             cancelAnimationFrame(animationId);
-            
+
             // Proper disposal to prevent memory leaks and "ghost" dots
             geometry.dispose();
             material.dispose();
             renderer.dispose();
-            if (containerRef.current) {
-                containerRef.current.innerHTML = '';
+
+            // Capture ref value to avoid React Hooks warning
+            const container = containerRef.current;
+            if (container) {
+                container.innerHTML = '';
             }
         };
     }, [theme]); // The key: re-running this creates the fresh black or white state

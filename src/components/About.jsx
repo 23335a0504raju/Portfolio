@@ -3,12 +3,6 @@ import LandingAccordionItem from './ui/interactive-image-accordion';
 import { Timeline } from './ui/timeline';
 
 const About = () => {
-  const stats = [
-    { label: 'Total Projects', value: '10+' },
-    { label: 'Certificates', value: '13+' },
-    { label: 'Years Experience', value: '2+' }
-  ];
-
   const timelineData = [
     {
       title: "2023 - Present",
