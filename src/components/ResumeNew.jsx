@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, ExternalLink, Award } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiCodechef, SiLeetcode } from 'react-icons/si';
@@ -69,20 +69,20 @@ const ResumeNew = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#050505] text-gray-900 dark:text-white transition-colors duration-300">
-      
+
       {/* Background Layer */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-100/50 to-white dark:via-zinc-900/10 dark:to-black" />
-        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" 
-             style={{ backgroundImage: `radial-gradient(${theme === 'dark' ? '#fff' : '#000'} 1px, transparent 1px)`, backgroundSize: '50px 50px' }} />
+        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+          style={{ backgroundImage: `radial-gradient(${theme === 'dark' ? '#fff' : '#000'} 1px, transparent 1px)`, backgroundSize: '50px 50px' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          
+
           {/* --- LEFT SIDEBAR (STICKY) --- */}
           <div className="lg:col-span-4 lg:sticky lg:top-10 space-y-6">
-            
+
             <div className="bg-white/80 dark:bg-zinc-900/50 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-[2.5rem] p-8 shadow-xl animate-on-scroll opacity-0 translate-x-[-20px] transition-all duration-700">
               <div className="aspect-square rounded-3xl overflow-hidden mb-8 border border-gray-100 dark:border-white/5 shadow-inner">
                 <img src={profile} alt="Profile" className="w-full h-full object-cover" />
@@ -135,7 +135,7 @@ const ResumeNew = () => {
 
           {/* --- RIGHT CONTENT --- */}
           <div className="lg:col-span-8 space-y-8">
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
               {[
                 { label: "DSA Mastery", value: "450+" },
