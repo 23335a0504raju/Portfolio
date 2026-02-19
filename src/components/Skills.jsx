@@ -40,7 +40,7 @@ const Skills = () => {
   return (
     <section id="skills" className="skills">
       <div className="container">
-        <motion.h2 
+        <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,8 +48,8 @@ const Skills = () => {
         >
           My <span>Skills</span>
         </motion.h2>
-        
-        <motion.div 
+
+        <motion.div
           className="skills-grid"
           variants={container}
           initial="hidden"
@@ -57,7 +57,7 @@ const Skills = () => {
           viewport={{ once: true }}
         >
           {skills.map((skill, index) => (
-            <motion.div 
+            <motion.div
               key={skill.name}
               className="skill-box"
               variants={item}

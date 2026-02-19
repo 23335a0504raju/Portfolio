@@ -14,7 +14,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full py-8 text-gray-900 dark:text-white mt-auto border-t border-gray-200 dark:border-gray-800">
+    <footer className="w-full py-8 bg-white dark:bg-black text-gray-900 dark:text-white mt-auto border-t border-gray-200 dark:border-gray-800 relative z-50">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
           {/* Heading */}
