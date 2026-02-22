@@ -1,3 +1,4 @@
+import gsap from 'gsap';
 import Lenis from 'lenis';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -8,22 +9,29 @@ const SmoothScroll = () => {
 
     useEffect(() => {
         const lenis = new Lenis({
-            duration: 1.2,
+            duration: 1.1,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             orientation: 'vertical',
             gestureOrientation: 'vertical',
             smoothWheel: true,
-            wheelMultiplier: 1,
+            wheelMultiplier: 1.1,
             touchMultiplier: 2,
         });
         lenisRef.current = lenis;
 
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
+        // ── Sync Lenis with GSAP's ticker so both share ONE RAF loop ──
+        // This prevents competing requestAnimationFrame callbacks that
+        // break Framer Motion's useScroll on desktop.
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
 
-        requestAnimationFrame(raf);
+        // Force a native scroll event on every Lenis tick so
+        // Framer Motion's useScroll always reads the latest position.
+        lenis.on('scroll', () => {
+            window.dispatchEvent(new Event('scroll'));
+        });
 
         // Handle anchor links with delegation
         const onClick = (e) => {
@@ -34,15 +42,14 @@ const SmoothScroll = () => {
                 if (targetId && targetId !== '#' && document.querySelector(targetId)) {
                     lenis.scrollTo(targetId);
                 }
-                // If target doesn't exist on this page (e.g. cross-route link), 
-                // we don't preventDefault here if it was a real link, but usually 
-                // those are handled by router or useNavigate.
             }
         };
 
         document.addEventListener('click', onClick);
 
         return () => {
+            // Remove GSAP ticker callback and destroy lenis
+            gsap.ticker.remove((time) => lenis.raf(time * 1000));
             lenis.destroy();
             document.removeEventListener('click', onClick);
             lenisRef.current = null;
@@ -52,7 +59,6 @@ const SmoothScroll = () => {
     // Handle hash scrolling on route change
     useEffect(() => {
         if (location.hash && lenisRef.current) {
-            // Small timeout to ensure DOM is ready
             setTimeout(() => {
                 const target = document.querySelector(location.hash);
                 if (target) {

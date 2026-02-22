@@ -27,7 +27,7 @@ export const Timeline = ({ data }) => {
             className="w-full font-sans md:px-10"
             ref={containerRef}
         >
-            <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+            <div ref={ref} className="relative max-w-screen-2xl mx-auto pb-20">
                 {data.map((item, index) => (
                     <div
                         key={index}

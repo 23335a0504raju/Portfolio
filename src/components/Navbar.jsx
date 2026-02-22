@@ -66,7 +66,7 @@ const Navbar = ({ robotActive, toggleRobot }) => {
   };
 
   return (
-    <header className={`navbar ${scrolled || isMobileMenuOpen ? 'scrolled bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-sm' : 'bg-transparent'} fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'}`}>
+    <header className={`navbar ${scrolled || isMobileMenuOpen ? 'scrolled bg-white/80 dark:bg-[#09090b]/80 backdrop-blur-xl shadow-sm border-b border-gray-200 dark:border-white/10' : 'bg-transparent'} fixed w-full z-50 transition-all duration-500 ease-out ${scrolled ? 'py-3' : 'py-5'}`}>
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <a href="#home" className="logo text-2xl font-bold text-gray-900 dark:text-white z-50 relative">Portfolio</a>
 
@@ -76,7 +76,7 @@ const Navbar = ({ robotActive, toggleRobot }) => {
             tabs={tabs}
             onChange={handleTabChange}
             activeColor="text-gray-900 dark:text-white"
-            className="border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md"
+            className="border-gray-200 dark:border-white/10 bg-white/60 dark:bg-[#09090b]/60 backdrop-blur-xl shadow-sm hover:shadow-md transition-shadow duration-300"
           />
 
           <div className="flex items-center gap-2 ml-2">
@@ -128,8 +128,8 @@ const Navbar = ({ robotActive, toggleRobot }) => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 w-full bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 shadow-xl md:hidden flex flex-col p-4 gap-2 max-h-[80vh] overflow-y-auto"
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }} // smooth cubic bezier
+            className="absolute top-full left-0 w-full bg-white/95 dark:bg-[#09090b]/95 backdrop-blur-xl border-t border-gray-200 dark:border-white/10 shadow-2xl md:hidden flex flex-col p-4 gap-2 max-h-[80vh] overflow-y-auto"
           >
             {tabs.filter(t => t.type !== 'separator').map((tab, index) => (
               <button

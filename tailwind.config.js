@@ -7,13 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
       colors: {
         primary: {
           DEFAULT: '#171717', // neutral-900
           dark: '#fafafa',    // neutral-50
         },
         dark: {
-          bg: '#0a0a0a',      // Premium off-black
+          bg: '#09090b',      // Premium off-black
           card: 'rgba(255, 255, 255, 0.05)',
         },
         light: {

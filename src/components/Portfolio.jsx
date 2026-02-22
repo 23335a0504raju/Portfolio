@@ -33,14 +33,12 @@ import {
   SiTypescript,
   SiVercel
 } from 'react-icons/si';
+
 import { BentoGrid } from './ui/bento-grid';
-import { AuthorCard } from './ui/content-card';
+import CardStack from './ui/card-stack';
 import { ExpandableTabs } from './ui/expandable-tabs';
 import { LayoutGrid } from './ui/layout-grid';
 import OrbitingSkills from './ui/orbiting-skills';
-
-// ... (existing imports and code)
-
 const mappedAchievements = [
   {
     title: "Full-Stack Mastery",
@@ -426,154 +424,10 @@ const Portfolio = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="space-y-12"
+              className="max-w-4xl mx-auto"
             >
-              {/* Internship Certificates Section */}
-              <div>
-                <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
-                  Internship Certificates
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
-                  {[
-                    {
-                      title: "CodeAlpha Internship",
-                      description: "Full Stack Developer Internship",
-                      link: "https://drive.google.com/file/d/1Ae8pboizYSS6flTPe7Y32SXbE5cPpWWA/view?usp=sharing",
-                      org: "CodeAlpha",
-                      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQGjC1k7v1qN5A/company-logo_200_200/company-logo_200_200/0/1705663675836?e=1747872000&v=beta&t=M8-y30k4q1qM_30Z6q4q1qM_30Z6q4q1qM_30Z6q4q",
-                      bg: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                    },
-                    {
-                      title: "Pit Solutions Internship",
-                      description: "FrontEnd development and UI/UX design and realtime clients management",
-                      link: "https://drive.google.com/file/d/1PL1pZrYUftqmXFWnN_6JSk-vYiuW7pGl/view?usp=drive_link",
-                      org: "Pit Solutions",
-                      logo: "https://media.licdn.com/dms/image/v2/C560BAQG5655555555/company-logo_200_200/company-logo_200_200/0/1630666666666?e=1747872000&v=beta&t=M8-y30k4q1qM_30Z6q4q1qM_30Z6q4q1qM_30Z6q4q", // Placeholder
-                      bg: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                    },
-                    {
-                      title: "AIML Internship",
-                      description: "Gained hands-on experience in Machine Learning, Data Analysis, and AI applications.",
-                      link: "https://drive.google.com/file/d/1fMXogVfGuIcRUZHsjBRsBQul13Ml-sQ4/view?usp=drive_link",
-                      org: "AIML",
-                      logo: "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
-                      bg: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                    }
-                  ].map((cert, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="w-full"
-                    >
-                      <a href={cert.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
-                        <AuthorCard
-                          backgroundImage={cert.bg}
-                          author={{
-                            name: cert.org,
-                            avatar: cert.logo,
-                            readTime: "Internship"
-                          }}
-                          content={{
-                            title: cert.title,
-                            description: cert.description
-                          }}
-                          className="h-full min-h-[300px]"
-                        />
-                      </a>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-
-
-              <div>
-                <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
-                  Course Certificates
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
-                  {[
-                    {
-                      title: "Python Essentials 1 & 2",
-                      description: "Completed Python Essentials from Cisco",
-                      link: "https://drive.google.com/file/d/1I8--y5JZ1_vfreF3i5qNmsvk8CIABtn-/view?usp=drive_link",
-                      org: "Cisco",
-                      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png",
-                      bg: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                    },
-                    {
-                      title: "CCNA-3 & Cybersecurity",
-                      description: "Completed all modules of CCNA 3 under Cisco Networking Academy.",
-                      link: "https://drive.google.com/file/d/1joG86kXEps8nMkyfzcLPptdl_QNW441f/view?usp=drive_link",
-                      org: "Cisco",
-                      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png",
-                      bg: "https://images.unsplash.com/photo-1558494949-ef2bb6db8744?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                    },
-                    {
-                      title: "Cloud Computing",
-                      description: "Completed Cloud Computing Course (NPTEL) - Score: 84",
-                      link: "https://drive.google.com/file/d/1pJRevLW9F-Fofb6USBc2D_qLhsd56DvX/view?usp=drive_link",
-                      org: "NPTEL",
-                      logo: "https://nptel.ac.in/assets/nptel_assets/images/nptel-logo.png",
-                      bg: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                    },
-                    {
-                      title: "Deloitte Australia Tech",
-                      description: "Job simulation involving development and coding.",
-                      link: "https://drive.google.com/file/d/1praxyQCpluZVPG_vIZHjmqQdC5xOCV-o/view?usp=drive_link",
-                      org: "Deloitte",
-                      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Deloitte.svg/2560px-Deloitte.svg.png",
-                      bg: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                    },
-                    {
-                      title: "GitHub Copilot",
-                      description: "Introduction to GitHub Copilot course.",
-                      link: "https://drive.google.com/file/d/10Re6aFaGoKxM5IoGYnjZ8k5lBg2RxKSw/view?usp=drive_link",
-                      org: "GitHub",
-                      logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-                      bg: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                    },
-                    {
-                      title: "HP Digital Business Skills",
-                      description: "Completed six certified courses provided by HP.",
-                      link: "https://drive.google.com/file/d/1L_3Gx6nRi8Slt31-0LpiBv4p3uVgPoxf/view?usp=drive_link",
-                      org: "HP",
-                      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/2048px-HP_logo_2012.svg.png",
-                      bg: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                    }
-                  ].map((cert, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="w-full"
-                    >
-                      <a href={cert.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
-                        <AuthorCard
-                          backgroundImage={cert.bg}
-                          author={{
-                            name: cert.org,
-                            avatar: cert.logo,
-                            readTime: "Certificate"
-                          }}
-                          content={{
-                            title: cert.title,
-                            description: cert.description
-                          }}
-                          className="h-full min-h-[300px]"
-                        />
-                      </a>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+              <CardStack />
             </motion.div>
-
           )}
 
           {activeTab === 'achievements' && (
@@ -583,7 +437,7 @@ const Portfolio = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.6 }}
-              className="max-w-7xl mx-auto"
+              className="max-w-screen-2xl mx-auto"
             >
               <BentoGrid items={mappedAchievements} />
             </motion.div>
@@ -601,12 +455,12 @@ const Portfolio = () => {
                 {techStack.map((category, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                    className="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-800 rounded-3xl p-4 shadow-xl overflow-hidden relative"
+                    transition={{ delay: index * 0.1, duration: 0.5, type: 'spring', damping: 20 }}
+                    className="bg-white/60 dark:bg-[#09090b]/60 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-3xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden relative"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-100/50 to-gray-200/50 dark:from-black/40 dark:to-gray-900/40 opacity-50 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-white/10 dark:from-white/5 dark:to-transparent opacity-50 pointer-events-none"></div>
                     <OrbitingSkills skills={category.skills} categoryName={category.name} />
                   </motion.div>
                 ))}
@@ -634,7 +488,7 @@ const ProjectCardContent = ({ project }) => {
         {project.tech.map((tech, i) => (
           <span
             key={i}
-            className="text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700"
+            className="text-[11px] uppercase font-semibold tracking-wider px-3 py-1.5 rounded-full bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/10 shadow-sm"
           >
             {tech}
           </span>

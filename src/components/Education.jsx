@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { PinContainer } from './ui/3d-pin';
 import btechImg from '../assets/btech.jpg';
 import diplomaImg from '../assets/diploma.jpg';
 import schoolImg from '../assets/school.webp';
+import { PinContainer } from './ui/3d-pin';
 
 const Education = () => {
     const educationData = [
@@ -40,7 +40,7 @@ const Education = () => {
 
     return (
         <section id="education" className="py-20 px-4 md:px-8 lg:px-16 text-gray-900 dark:text-white overflow-hidden bg-gray-50 dark:bg-black/20">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-screen-2xl mx-auto">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -76,21 +76,21 @@ const Education = () => {
                                         </span>
                                     </div>
                                     <div className="relative flex flex-1 w-full rounded-lg mt-4 overflow-hidden bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500">
-                                        <img 
-                                            src={edu.image} 
+                                        <img
+                                            src={edu.image}
                                             alt={edu.institution}
                                             className="absolute inset-0 w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
                                         />
                                         <div className="absolute inset-0 bg-black/40 hover:bg-black/10 transition-colors duration-500"></div>
                                         <div className="absolute bottom-4 left-4 right-4 z-10">
-                                             <div className="flex items-center justify-between">
+                                            <div className="flex items-center justify-between">
                                                 <span className="text-white font-bold bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm text-sm border border-white/20">
                                                     {edu.score}
                                                 </span>
                                                 <span className="text-white/80 text-xs font-medium bg-blue-600/80 px-2 py-1 rounded-md">
                                                     {edu.level}
                                                 </span>
-                                             </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@ const Education = () => {
                     ))}
                 </div>
             </div>
-            
+
             <style jsx>{`
                 @keyframes wave {
                   0%, 100% {
