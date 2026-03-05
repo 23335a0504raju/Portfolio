@@ -32,21 +32,8 @@ export function Hero() {
       <ContainerScroll
         titleComponent={
           <>
-            <p className="hidden md:block text-sm md:text-base font-medium tracking-widest uppercase text-blue-500 dark:text-blue-400 mb-3">
-              Full-Stack Engineer · React · Django · Cloud
-            </p>
-            <h1 className="text-2xl md:text-5xl font-medium tracking-tight text-gray-600 dark:text-gray-400 mb-0 md:mb-2">
-              Hi, I&apos;m{" "}
-              <span className="text-gray-900 dark:text-white font-bold">
-                Raju Ch
-              </span>
-              <br />
-              <span className="text-4xl md:text-[6rem] font-black tracking-tighter mt-1 md:mt-1 leading-[1.05] bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-500 dark:from-white dark:to-white/60 drop-shadow-sm block">
-                Building Scalable
-              </span>
-              <span className="text-4xl md:text-[6rem] font-black tracking-tighter leading-[1.05] text-gray-900 dark:text-white block mt-0 md:mt-2">
-                Web Solutions
-              </span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-gray-900 dark:text-white mt-4 mb-4 md:mt-8 md:mb-8 text-center drop-shadow-sm">
+              Hi, I&apos;m <br className="md:hidden" /><span className="font-bold bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-500 dark:from-white dark:to-gray-400">Raju Ch</span>
             </h1>
           </>
         }
