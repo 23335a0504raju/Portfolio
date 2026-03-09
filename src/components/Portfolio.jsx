@@ -2,36 +2,36 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Award, Brain, CheckCircle, Cloud, Code, GraduationCap, Server, Terminal, Trophy, Zap } from 'lucide-react';
 import { useState } from 'react';
 import {
-  FaBootstrap,
-  FaCss3Alt,
-  FaGlobe,
-  FaHtml5,
-  FaJava,
-  FaJs,
-  FaNodeJs,
-  FaProjectDiagram,
-  FaPython,
-  FaReact,
-  FaServer
+    FaBootstrap,
+    FaCss3Alt,
+    FaGlobe,
+    FaHtml5,
+    FaJava,
+    FaJs,
+    FaNodeJs,
+    FaProjectDiagram,
+    FaPython,
+    FaReact,
+    FaServer
 } from 'react-icons/fa';
 import {
-  SiApache,
-  SiCisco,
-  SiCplusplus,
-  SiDjango,
-  SiDocker,
-  SiExpress,
-  SiMaterialdesign,
-  SiMongodb,
-  SiMysql,
-  SiNodemon,
-  SiOpenai,
-  SiPostgresql,
-  SiRender,
-  SiSupabase,
-  SiTensorflow,
-  SiTypescript,
-  SiVercel
+    SiApache,
+    SiCisco,
+    SiCplusplus,
+    SiDjango,
+    SiDocker,
+    SiExpress,
+    SiMaterialdesign,
+    SiMongodb,
+    SiMysql,
+    SiNodemon,
+    SiOpenai,
+    SiPostgresql,
+    SiRender,
+    SiSupabase,
+    SiTensorflow,
+    SiTypescript,
+    SiVercel
 } from 'react-icons/si';
 
 import { BentoGrid } from './ui/bento-grid';
@@ -370,8 +370,9 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="py-16 px-4 md:px-8 lg:px-16 text-gray-900 dark:text-white"
+      className="py-16 px-4 md:px-8 lg:px-16 text-gray-900 dark:text-white relative"
     >
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_15%_20%,rgba(56,189,248,0.12),transparent_34%),radial-gradient(circle_at_85%_80%,rgba(14,165,233,0.12),transparent_38%)]" />
 
       {/* Make container full width */}
       <div className="w-full relative z-10 transition-colors duration-300">
@@ -383,10 +384,11 @@ const Portfolio = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white block">
+          <p className="text-xs uppercase tracking-[0.24em] font-semibold text-sky-700 dark:text-cyan-300 mb-3">Portfolio</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-cyan-50 block">
             My Portfolio
           </h2>
-          <div className="h-1 w-20 mx-auto bg-gray-900 dark:bg-white rounded-full"></div>
+          <div className="h-1 w-20 mx-auto bg-sky-600 dark:bg-cyan-300 rounded-full"></div>
         </motion.div>
 
         {/* Tab Buttons */}
@@ -399,8 +401,8 @@ const Portfolio = () => {
             }}
             defaultSelected={0}
             enableOutsideClick={false}
-            activeColor="text-gray-900 dark:text-white"
-            className="bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700 min-w-max"
+            activeColor="text-slate-900 dark:text-cyan-50"
+            className="bg-white/70 dark:bg-[#0a1122]/70 border-slate-200 dark:border-cyan-400/20 backdrop-blur-xl min-w-max"
           />
         </div>
 
@@ -458,7 +460,7 @@ const Portfolio = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1, duration: 0.5, type: 'spring', damping: 20 }}
-                    className="bg-white/60 dark:bg-[#09090b]/60 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-3xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden relative"
+                    className="bg-white/65 dark:bg-[#0a1122]/70 backdrop-blur-xl border border-slate-200 dark:border-cyan-400/20 rounded-3xl p-4 shadow-sm hover:shadow-[0_10px_30px_rgba(2,132,199,0.18)] transition-shadow duration-300 overflow-hidden relative"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-white/10 dark:from-white/5 dark:to-transparent opacity-50 pointer-events-none"></div>
                     <OrbitingSkills skills={category.skills} categoryName={category.name} />
@@ -488,7 +490,7 @@ const ProjectCardContent = ({ project }) => {
         {project.tech.map((tech, i) => (
           <span
             key={i}
-            className="text-[11px] uppercase font-semibold tracking-wider px-3 py-1.5 rounded-full bg-white/50 dark:bg-white/5 backdrop-blur-sm text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/10 shadow-sm"
+            className="text-[11px] uppercase font-semibold tracking-wider px-3 py-1.5 rounded-full bg-white/55 dark:bg-cyan-500/10 backdrop-blur-sm text-slate-700 dark:text-cyan-100 border border-slate-200 dark:border-cyan-400/30 shadow-sm"
           >
             {tech}
           </span>
@@ -499,7 +501,7 @@ const ProjectCardContent = ({ project }) => {
           href={project.git}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center text-sm font-semibold px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 dark:bg-white/10 dark:hover:bg-white/20 text-gray-900 dark:text-white transition-all duration-300 gap-2"
+          className="inline-flex items-center justify-center text-sm font-semibold px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 dark:bg-cyan-500/10 dark:hover:bg-cyan-500/20 text-slate-900 dark:text-cyan-100 transition-all duration-300 gap-2"
         >
           GitHub
         </a>
@@ -507,7 +509,7 @@ const ProjectCardContent = ({ project }) => {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center text-sm font-semibold px-4 py-2 rounded-lg bg-gray-900 hover:bg-black dark:bg-white dark:hover:bg-gray-200 dark:text-black text-white transition-all duration-300 gap-2"
+          className="inline-flex items-center justify-center text-sm font-semibold px-4 py-2 rounded-lg bg-slate-900 hover:bg-sky-700 dark:bg-cyan-300 dark:hover:bg-cyan-200 dark:text-slate-900 text-white transition-all duration-300 gap-2"
         >
           Live Demo
         </a>

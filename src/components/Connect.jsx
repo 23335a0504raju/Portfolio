@@ -36,11 +36,12 @@ const Connect = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+          <p className="text-xs uppercase tracking-[0.24em] font-semibold text-sky-700 dark:text-cyan-300 mb-3">Message</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-cyan-50">
             Get In Touch
           </h2>
-          <div className="h-1 w-16 mx-auto bg-gray-900 dark:bg-white rounded-full mb-6" />
-          <p className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto">
+          <div className="h-1 w-16 mx-auto bg-sky-600 dark:bg-cyan-300 rounded-full mb-6" />
+          <p className="text-slate-500 dark:text-slate-300 text-lg max-w-xl mx-auto">
             Have a question or want to work together? I'll get back to you as soon as possible.
           </p>
         </motion.div>
@@ -52,7 +53,7 @@ const Connect = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="w-full lg:w-3/5 h-[400px] lg:h-[680px] rounded-3xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-xl"
+            className="w-full lg:w-3/5 h-[400px] lg:h-[680px] rounded-3xl overflow-hidden border border-slate-200 dark:border-cyan-400/20 shadow-xl"
           >
             <iframe
               src="https://my.spline.design/earthdayandnight-chFec1DXGGjtUTxry6WIbl0o/"
@@ -73,14 +74,14 @@ const Connect = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="w-full lg:w-2/5 flex flex-col justify-center"
           >
-            <div className="relative bg-white/70 dark:bg-white/5 backdrop-blur-2xl border border-gray-200 dark:border-white/10 rounded-3xl p-8 md:p-10 shadow-xl dark:shadow-black/30">
+            <div className="relative bg-white/70 dark:bg-[#0a1122]/60 backdrop-blur-2xl border border-slate-200 dark:border-cyan-400/20 rounded-3xl p-8 md:p-10 shadow-xl dark:shadow-black/30">
 
               {/* Subtle gradient glow */}
               <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-white/30 via-transparent to-transparent dark:from-white/5 pointer-events-none" />
 
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Send a Message</h3>
-                <p className="text-gray-500 dark:text-gray-400 text-sm mb-8">I read every message and respond promptly.</p>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-cyan-50 mb-2">Send a Message</h3>
+                <p className="text-slate-500 dark:text-slate-300 text-sm mb-8">I read every message and respond promptly.</p>
 
                 {submitted && (
                   <motion.div
@@ -106,7 +107,7 @@ const Connect = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white/30 focus:border-transparent transition-all duration-300 text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-cyan-500/5 border border-slate-200 dark:border-cyan-400/20 text-slate-900 dark:text-cyan-50 placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-cyan-300/60 focus:border-transparent transition-all duration-300 text-sm"
                       placeholder="Raju Chowdavada"
                     />
                   </div>
@@ -123,7 +124,7 @@ const Connect = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white/30 focus:border-transparent transition-all duration-300 text-sm"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-cyan-500/5 border border-slate-200 dark:border-cyan-400/20 text-slate-900 dark:text-cyan-50 placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-cyan-300/60 focus:border-transparent transition-all duration-300 text-sm"
                       placeholder="raju@example.com"
                     />
                   </div>
@@ -140,7 +141,7 @@ const Connect = () => {
                       onChange={handleChange}
                       required
                       rows="5"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white/30 focus:border-transparent transition-all duration-300 text-sm resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-cyan-500/5 border border-slate-200 dark:border-cyan-400/20 text-slate-900 dark:text-cyan-50 placeholder-slate-400 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-600 dark:focus:ring-cyan-300/60 focus:border-transparent transition-all duration-300 text-sm resize-none"
                       placeholder="Tell me about your project or question..."
                     />
                   </div>
@@ -150,7 +151,7 @@ const Connect = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.97 }}
                     type="submit"
-                    className="w-full py-3.5 px-6 bg-gray-900 hover:bg-black dark:bg-white dark:hover:bg-gray-100 dark:text-gray-900 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-sm tracking-wide"
+                    className="w-full py-3.5 px-6 bg-slate-900 hover:bg-sky-700 dark:bg-cyan-300 dark:hover:bg-cyan-200 dark:text-slate-900 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-sm tracking-wide"
                   >
                     Send Message →
                   </motion.button>

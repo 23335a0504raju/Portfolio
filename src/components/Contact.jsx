@@ -61,10 +61,11 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          <p className="text-xs uppercase tracking-[0.24em] font-semibold text-sky-700 dark:text-cyan-300 mb-3">Contact</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-cyan-50">
             Let's Connect
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto text-lg">
+          <p className="text-slate-600 dark:text-slate-300 max-w-xl mx-auto text-lg">
             Open for freelance projects, collaborations or just a friendly chat.
           </p>
         </motion.div>
@@ -104,7 +105,7 @@ const Contact = () => {
                 </PinContainer>
               </div>
               <div className="md:hidden w-full h-full flex items-center justify-center mx-auto">
-                <a href={contact.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full rounded-2xl overflow-hidden relative shadow-sm bg-white/60 dark:bg-[#09090b]/60 backdrop-blur-xl border border-gray-200 dark:border-white/10 hover:shadow-md hover:-translate-y-2 transition-transform duration-300">
+                <a href={contact.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full rounded-2xl overflow-hidden relative shadow-sm bg-white/65 dark:bg-[#0a1122]/70 backdrop-blur-xl border border-slate-200 dark:border-cyan-400/20 hover:shadow-[0_12px_32px_rgba(2,132,199,0.18)] hover:-translate-y-2 transition-transform duration-300">
                   <ContactCardContent contact={contact} isMobile={true} />
                 </a>
               </div>
@@ -150,7 +151,7 @@ const Contact = () => {
       </div >
 
       {/* Floating Particles Background */}
-      < div className="absolute inset-0 overflow-hidden z-0 pointer-events-none" >
+      <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
         {
           [...Array(8)].map((_, i) => (
             <motion.div
@@ -174,23 +175,23 @@ const Contact = () => {
             />
           ))
         }
-      </div >
-    </section >
+      </div>
+    </section>
   );
 };
 
 const ContactCardContent = ({ contact, isMobile }) => {
   return (
-    <div className={`flex flex-col p-4 md:p-5 tracking-tight w-full h-full ${isMobile ? 'text-gray-900 dark:text-white' : 'text-slate-100/50'}`}>
-      <h3 className={`max-w-xs !pb-1 !m-0 font-bold text-base md:text-lg ${isMobile ? 'text-gray-900 dark:text-white' : 'text-slate-100'}`}>
+    <div className={`flex flex-col p-4 md:p-5 tracking-tight w-full h-full ${isMobile ? 'text-slate-900 dark:text-cyan-50' : 'text-slate-100/50'}`}>
+      <h3 className={`max-w-xs !pb-1 !m-0 font-bold text-base md:text-lg ${isMobile ? 'text-slate-900 dark:text-cyan-50' : 'text-slate-100'}`}>
         {contact.label}
       </h3>
       <div className="text-xs md:text-sm !m-0 !p-0 font-medium pb-2">
-        <span className={`${isMobile ? 'text-gray-500 dark:text-gray-400' : 'text-slate-400'}`}>
+        <span className={`${isMobile ? 'text-slate-500 dark:text-slate-300' : 'text-slate-400'}`}>
           {contact.description}
         </span>
       </div>
-      <div className="relative flex flex-1 w-full rounded-xl mt-2 overflow-hidden bg-gray-100 dark:bg-[#09090b] border border-gray-200 dark:border-white/10 shadow-sm group">
+      <div className="relative flex flex-1 w-full rounded-xl mt-2 overflow-hidden bg-slate-100 dark:bg-[#09090b] border border-slate-200 dark:border-cyan-400/20 shadow-sm group">
         <img
           src={contact.image}
           alt={contact.label}

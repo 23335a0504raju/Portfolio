@@ -1,8 +1,8 @@
 import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter
+    FaFacebook,
+    FaInstagram,
+    FaLinkedin,
+    FaTwitter
 } from 'react-icons/fa';
 
 const Footer = () => {
@@ -14,7 +14,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full py-8 bg-white dark:bg-black text-gray-900 dark:text-white mt-auto border-t border-gray-200 dark:border-gray-800 relative z-50">
+    <footer className="w-full py-8 bg-white/70 dark:bg-[#05070d]/80 text-slate-900 dark:text-cyan-50 mt-auto border-t border-slate-200 dark:border-cyan-500/20 backdrop-blur relative z-50">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
           {/* Heading */}
@@ -22,12 +22,12 @@ const Footer = () => {
             <h5 className="text-xl font-bold relative z-10">
               Passion for Technology
             </h5>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-blue-500 rounded-full"></div>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-sky-600 dark:bg-cyan-300 rounded-full"></div>
           </div>
 
-          <div className="w-full h-px bg-gray-200 dark:bg-gray-800 mb-6"></div>
+          <div className="w-full h-px bg-slate-200 dark:bg-cyan-500/20 mb-6"></div>
 
-          <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed max-w-lg mx-auto">
+          <p className="text-sm text-slate-600 dark:text-slate-300 mb-6 leading-relaxed max-w-lg mx-auto">
             Innovation distinguishes between a leader and a follower. We build solutions that matter and create digital experiences that users love.
           </p>
 
@@ -38,14 +38,14 @@ const Footer = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow-lg"
+                className="p-3 rounded-full bg-slate-100 dark:bg-cyan-500/10 text-slate-600 dark:text-cyan-200 hover:bg-sky-600 hover:text-white dark:hover:bg-cyan-300 dark:hover:text-slate-900 transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow-lg"
               >
                 {social.icon}
               </a>
             ))}
           </div>
 
-          <div className="mt-8 text-xs text-gray-500 dark:text-gray-500">
+          <div className="mt-8 text-xs text-slate-500 dark:text-slate-400">
             © {new Date().getFullYear()} Raju Chowdavada. All rights reserved.
           </div>
         </div>

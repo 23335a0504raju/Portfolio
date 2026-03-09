@@ -1,112 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-primary: #f8fbff;
+  --bg-secondary: #ecf3fa;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #0284c7;
+  --accent-soft: #38bdf8;
+}
+
+html.dark {
+  --bg-primary: #020617;
+  --bg-secondary: #0b1226;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #22d3ee;
+  --accent-soft: #67e8f9;
+}
+
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-height: 100%;
+  }
+
   body {
-    @apply bg-white dark:bg-[#09090b] text-gray-900 dark:text-gray-100 antialiased;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    margin: 0;
+    font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    background:
+      radial-gradient(circle at 10% 10%, rgba(2, 132, 199, 0.08), transparent 35%),
+      radial-gradient(circle at 90% 85%, rgba(14, 165, 233, 0.1), transparent 38%),
+      linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-secondary);
+  }
+
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
   }
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
 }
 
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.dark ::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 ::-webkit-scrollbar-thumb {
-  background: #d1d5db;
-  border-radius: 10px;
+  background: rgba(2, 132, 199, 0.35);
+  border-radius: 999px;
   border: 2px solid transparent;
-  background-clip: padding-box;
+  background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
+  background: rgba(2, 132, 199, 0.6);
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #3f3f46;
+  background: rgba(34, 211, 238, 0.35);
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #52525b;
+  background: rgba(34, 211, 238, 0.6);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-/* Base Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-
-/* Core Body Defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* Remove Default Margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove List Styles */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Anchor Elements */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Images */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-/* Inherit Fonts */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove Animations */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
@@ -120,43 +131,4 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* Global Styles */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  /* height: 100%; - Removed to allow natural scrolling */
-  /* overflow-x: hidden; - Temporarily removed to debug sticky issue */
-}
-
-/* Particles container */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  /* Behind everything */
-  background: transparent;
-}
-
-/* React root container */
-#root {
-  position: relative;
-  z-index: 1;
-  /* Above particles */
-  min-height: 100vh;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
-}
-
-.scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }

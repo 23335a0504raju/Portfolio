@@ -67,6 +67,13 @@ const ResumeNew = () => {
     { name: 'Mongo', logo: 'Mg' }, { name: 'TS', logo: 'Ts' },
   ];
 
+  const socialLinks = [
+    { Icon: FaGithub, href: 'https://github.com/23335a0504raju', label: 'GitHub' },
+    { Icon: FaLinkedin, href: 'https://linkedin.com/in/raju-chowdavada-06b734347', label: 'LinkedIn' },
+    { Icon: SiLeetcode, href: 'https://leetcode.com/u/Raju_Ch8464/', label: 'LeetCode' },
+    { Icon: SiCodechef, href: 'https://www.codechef.com/users/', label: 'CodeChef' },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#050505] text-gray-900 dark:text-white transition-colors duration-300">
 
@@ -90,16 +97,16 @@ const ResumeNew = () => {
 
               <div className="space-y-2 text-center lg:text-left">
                 <h1 className="text-3xl font-black tracking-tighter uppercase leading-none">
-                  CHOWDAVADA <span className="text-blue-600 dark:text-emerald-400">RAJU</span>
+                  CHOWDAVADA <span className="text-sky-600 dark:text-cyan-300">RAJU</span>
                 </h1>
-                <p className="text-blue-500 dark:text-emerald-500/80 text-[10px] font-mono tracking-[0.4em] uppercase font-bold">
+                <p className="text-sky-600 dark:text-cyan-300 text-[10px] font-mono tracking-[0.4em] uppercase font-bold">
                   Full Stack Engineer
                 </p>
               </div>
 
               <div className="mt-8 space-y-4 pt-8 border-t border-gray-100 dark:border-white/5">
                 <div className="space-y-3">
-                  <a href="mailto:smilyraju8464@gmail.com" className="flex items-center gap-3 text-sm text-gray-500 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
+                  <a href="mailto:smilyraju8464@gmail.com" className="flex items-center gap-3 text-sm text-gray-500 dark:text-zinc-400 hover:text-sky-600 dark:hover:text-cyan-300 transition-colors">
                     <Mail size={16} /> smilyraju8464@gmail.com
                   </a>
                   <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-zinc-400">
@@ -108,16 +115,28 @@ const ResumeNew = () => {
                 </div>
 
                 <div className="flex gap-3 justify-center lg:justify-start">
-                  {[FaGithub, FaLinkedin, SiLeetcode, SiCodechef].map((Icon, i) => (
-                    <button key={i} className="w-11 h-11 rounded-2xl bg-gray-100 dark:bg-white/5 flex items-center justify-center text-gray-400 hover:text-blue-600 dark:hover:text-emerald-400 border border-gray-200 dark:border-white/5 transition-all">
+                  {socialLinks.map(({ Icon, href, label }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="w-11 h-11 rounded-2xl bg-gray-100 dark:bg-white/5 flex items-center justify-center text-gray-400 hover:text-sky-600 dark:hover:text-cyan-300 border border-gray-200 dark:border-white/5 transition-all"
+                    >
                       <Icon size={20} />
-                    </button>
+                    </a>
                   ))}
                 </div>
 
-                <button className="w-full py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-black text-xs rounded-2xl hover:bg-blue-600 dark:hover:bg-emerald-400 transition-all uppercase tracking-widest shadow-xl">
+                <a
+                  href="https://drive.google.com/file/d/12-iWWjxQ1jO14D3cwAnLJALMgThYX1l_/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-black text-xs rounded-2xl hover:bg-sky-600 dark:hover:bg-cyan-300 transition-all uppercase tracking-widest shadow-xl text-center block"
+                >
                   Download CV
-                </button>
+                </a>
               </div>
             </div>
 
@@ -158,12 +177,12 @@ const ResumeNew = () => {
               <div className="space-y-12">
                 {workExperience.map((job, index) => (
                   <div key={index} className="relative pl-10 border-l border-gray-200 dark:border-white/10 group">
-                    <div className="absolute w-2 h-2 bg-gray-300 dark:bg-zinc-700 rounded-full -left-[5px] top-2 group-hover:bg-emerald-500 transition-all" />
+                    <div className="absolute w-2 h-2 bg-gray-300 dark:bg-zinc-700 rounded-full -left-[5px] top-2 group-hover:bg-cyan-300 transition-all" />
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
-                      <h3 className="text-xl font-bold group-hover:text-emerald-400 transition-colors">{job.role}</h3>
-                      <span className="text-[10px] font-mono text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">{job.period}</span>
+                      <h3 className="text-xl font-bold group-hover:text-cyan-300 transition-colors">{job.role}</h3>
+                      <span className="text-[10px] font-mono text-sky-600 dark:text-cyan-300 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">{job.period}</span>
                     </div>
-                    <p className="text-blue-600 dark:text-emerald-600 font-bold text-xs uppercase tracking-wider mb-4">{job.company}</p>
+                    <p className="text-sky-600 dark:text-cyan-300 font-bold text-xs uppercase tracking-wider mb-4">{job.company}</p>
                     <p className="text-gray-500 dark:text-zinc-400 text-sm leading-relaxed max-w-2xl">
                       Contributed to core development cycles, optimized frontend performance, and collaborated with cross-functional teams to deliver high-quality software solutions.
                     </p>
@@ -182,10 +201,10 @@ const ResumeNew = () => {
                   <div key={index} className="group">
                     <div className="flex justify-between mb-3">
                       <span className="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-zinc-300">{skill.name}</span>
-                      <span className="text-xs font-mono text-emerald-500">{skill.level}%</span>
+                      <span className="text-xs font-mono text-sky-600 dark:text-cyan-300">{skill.level}%</span>
                     </div>
                     <div className="h-2 bg-gray-100 dark:bg-black/60 rounded-full overflow-hidden border border-gray-200 dark:border-white/5">
-                      <div className="h-full bg-blue-600 dark:bg-emerald-500 transition-all duration-1000 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.5)]" style={{ width: `${skill.level}%` }} />
+                      <div className="h-full bg-sky-600 dark:bg-cyan-300 transition-all duration-1000 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.5)]" style={{ width: `${skill.level}%` }} />
                     </div>
                   </div>
                 ))}
@@ -202,7 +221,7 @@ const ResumeNew = () => {
                   <div key={index} className="p-6 rounded-3xl bg-gray-50 dark:bg-black/40 border border-gray-100 dark:border-white/5">
                     <h3 className="text-lg font-bold mb-2 leading-tight">{edu.degree}</h3>
                     <p className="text-sm text-gray-500 dark:text-zinc-400 mb-4">{edu.school}</p>
-                    <span className="text-[10px] font-mono text-emerald-500">{edu.period}</span>
+                    <span className="text-[10px] font-mono text-sky-600 dark:text-cyan-300">{edu.period}</span>
                   </div>
                 ))}
               </div>

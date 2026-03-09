@@ -28,6 +28,7 @@ const defaultItems = [
 
 export const StackInteractor = ({ items = defaultItems, className }) => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
     const containerRef = useRef(null);
     const imageRef = useRef(null);
     const mainGroupRef = useRef(null);
@@ -82,6 +83,28 @@ export const StackInteractor = ({ items = defaultItems, className }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    useLayoutEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    useLayoutEffect(() => {
+        if (!isMobile) return;
+
+        const interval = setInterval(() => {
+            setActiveIndex((prev) => {
+                const next = (prev + 1) % items.length;
+                createLoop(next);
+                return next;
+            });
+        }, 2800);
+
+        return () => clearInterval(interval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isMobile, items.length]);
+
     const handleItemHover = (index) => {
         if (index === activeIndex) return;
         setActiveIndex(index);
@@ -97,19 +120,20 @@ export const StackInteractor = ({ items = defaultItems, className }) => {
             )}
         >
             {/* LEFT: Menu list */}
-            <div className="z-20 w-full md:w-1/2 px-6 md:px-12">
+            <div className="z-20 w-full md:w-1/2 px-4 md:px-12 pt-2 md:pt-0">
                 <nav>
-                    <ul className="flex flex-col gap-6 md:gap-14">
+                    <ul className="flex flex-col gap-3 sm:gap-4 md:gap-14">
                         {items.map((item, index) => (
                             <li
                                 key={item.num}
                                 onMouseEnter={() => handleItemHover(index)}
+                                onClick={() => handleItemHover(index)}
                                 className="group cursor-pointer"
                             >
-                                <div className="flex items-start gap-6">
+                                <div className="flex items-start gap-3 sm:gap-4 md:gap-6">
                                     <span
                                         className={cn(
-                                            "text-2xl md:text-3xl font-bold transition-all duration-500 mt-2",
+                                            "text-xl sm:text-2xl md:text-3xl font-bold transition-all duration-500 mt-1.5 md:mt-2",
                                             activeIndex === index
                                                 ? "text-blue-500 scale-110"
                                                 : "text-zinc-400 dark:text-zinc-600"
@@ -120,9 +144,9 @@ export const StackInteractor = ({ items = defaultItems, className }) => {
 
                                     <h2
                                         className={cn(
-                                            "text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.85] transition-all duration-700",
+                                            "text-[1.55rem] sm:text-[1.85rem] md:text-6xl font-black uppercase tracking-tighter leading-[0.9] md:leading-[0.85] transition-all duration-700",
                                             activeIndex === index
-                                                ? "text-zinc-950 dark:text-white opacity-100 translate-x-4"
+                                                ? "text-zinc-950 dark:text-white opacity-100 translate-x-1 sm:translate-x-2 md:translate-x-4"
                                                 : "opacity-40 translate-x-0 text-zinc-500 dark:text-transparent dark:[text-stroke:1.5px_#52525b] dark:[-webkit-text-stroke:1.5px_#52525b]"
                                         )}
                                     >
@@ -138,12 +162,12 @@ export const StackInteractor = ({ items = defaultItems, className }) => {
             </div>
 
             {/* RIGHT: GSAP SVG canvas */}
-            <div className="relative w-full md:w-1/2 flex justify-center items-center mt-4 md:mt-0">
+            <div className="relative w-full md:w-1/2 flex justify-center items-center mt-2 md:mt-0">
                 <div className="absolute w-[100%] h-[100%] bg-blue-500/10 dark:bg-blue-600/5 blur-[90px] md:blur-[120px] rounded-full transition-opacity duration-1000" />
 
                 <svg
                     viewBox="0 0 500 500"
-                    className="w-[60%] md:w-[85%] max-w-[480px] h-auto z-10 drop-shadow-xl dark:drop-shadow-[0_0_60px_rgba(0,0,0,0.8)]"
+                    className="w-[52%] sm:w-[56%] md:w-[85%] max-w-[480px] h-auto z-10 drop-shadow-xl dark:drop-shadow-[0_0_60px_rgba(0,0,0,0.8)]"
                     style={{ pointerEvents: "none" }}
                 >
                     <defs>
