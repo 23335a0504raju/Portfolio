@@ -124,6 +124,29 @@ const Portfolio = () => {
 
   const projects = [
     {
+      title: 'SmartWay Traffic',
+      description: 'Intelligent AI Traffic & Emergency Detection Management System. Powered by YOLOv8, FastAPI, and Eclipse SUMO with real-time detection for collisions, fire, and congestion.',
+      image: 'image/traffic.png',
+      link: 'https://smartway-traffic.vercel.app/',
+      git: 'https://github.com/23335a0504raju/smartway-traffic',
+      video: 'https://lnkd.in/g82autWn',
+      tech: [
+        'React',
+        'FastAPI',
+        'Node.js',
+        'PyTorch',
+        'YOLOv8',
+        'Supabase',
+        'Eclipse SUMO'
+      ],
+      features: [
+        'Live YOLOv8 Computer Vision Engine',
+        'Catastrophic Collisions & Fire Detection',
+        'SUMO Traffic Simulation Integration'
+      ],
+      role: 'Creator & Lead Developer'
+    },
+    {
       title: 'Campus Colab',
       description: 'A collaborative platform connecting students across campuses for group projects, knowledge sharing, and academic networking.',
       image: 'image/campus.png',

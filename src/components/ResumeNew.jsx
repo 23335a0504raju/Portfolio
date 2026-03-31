@@ -29,33 +29,36 @@ const ResumeNew = () => {
   }, []);
 
   const workExperience = [
-    { company: 'Reaidy.io', role: 'Full Stack Developer', period: 'Present' },
-    { company: 'Edu Skills', role: 'AIML Developer Intern', period: 'Jul 2025 – Sep 2025' },
-    { company: 'Pit Solutions', role: 'Frontend Development Intern', period: 'Dec 2022 – May 2023' },
+    { 
+      company: 'Spotmies', 
+      role: 'Full-Stack Developer Intern', 
+      period: 'Dec 2025 – Jun 2026',
+      description: 'Engineered full-stack applications leveraging React.js and Node.js. Architected robust backend APIs and dynamic frontend interfaces. Executed stable production deployments utilizing Vercel and Render.'
+    },
+    { 
+      company: 'Pit Solutions', 
+      role: 'Frontend Development Intern', 
+      period: 'Dec 2022 – May 2023',
+      description: 'Designed and implemented responsive client-facing dashboards utilizing HTML, CSS, and JavaScript. Partnered with multidisciplinary teams in Agile sprints. Enhanced usability and interface performance.'
+    },
   ];
 
   const education = [
-    { degree: 'B.Tech in Computer Science and Engineering', school: 'MVGR College of Engineering', period: '2023-2026' },
-    { degree: 'Diploma in Computer Engineering', school: 'Government Polytechnic Anakapalli', period: '2020-2023' },
-    { degree: 'Secondary School Education', school: 'Z.P. High School', period: '2019-2020' },
+    { degree: 'B.Tech in Computer Science and Engineering', school: 'MVGR College of Engineering (CGPA: 8.31/10)', period: 'Aug 2023 – May 2026' },
+    { degree: 'Diploma in Computer Engineering', school: 'Government Polytechnic Anakapalli (83%)', period: 'Aug 2020 – May 2023' },
   ];
 
   const skills = [
-    { name: 'Java', level: 90 },
-    { name: 'Python', level: 85 },
-    { name: 'MERN Stack', level: 85 },
+    { name: 'Java & Python', level: 90 },
     { name: 'React.js', level: 88 },
+    { name: 'Node.js & Express', level: 85 },
     { name: 'TypeScript', level: 80 },
-    { name: 'Django REST', level: 80 },
-    { name: 'SQL/NoSQL', level: 85 },
+    { name: 'MySQL & PostgreSQL', level: 85 },
     { name: 'MongoDB', level: 85 },
-    { name: 'Supabase', level: 75 },
-    { name: 'AWS Cloud', level: 75 },
+    { name: 'AWS & Docker', level: 75 },
+    { name: 'Tailwind CSS', level: 90 },
     { name: 'Data Structures', level: 90 },
-    { name: 'Machine Learning', level: 70 },
-    { name: 'Project Management', level: 80 },
-    { name: 'Web Applications', level: 85 },
-    { name: 'API Handling', level: 90 },
+    { name: 'REST APIs', level: 90 },
   ];
 
   const techStack = [
@@ -72,6 +75,15 @@ const ResumeNew = () => {
     { Icon: FaLinkedin, href: 'https://linkedin.com/in/raju-chowdavada-06b734347', label: 'LinkedIn' },
     { Icon: SiLeetcode, href: 'https://leetcode.com/u/Raju_Ch8464/', label: 'LeetCode' },
     { Icon: SiCodechef, href: 'https://www.codechef.com/users/', label: 'CodeChef' },
+  ];
+
+  const certifications = [
+    { name: 'Java Full Stack Developer', issuer: 'Wipro', year: '2025' },
+    { name: 'Digital Business Skills', issuer: 'HP', year: '2025' },
+    { name: 'GenAI Data Analytics Simulation', issuer: 'Tata iQ', year: '2025' },
+    { name: 'AWS Solutions Architecture', issuer: 'Forage', year: '2024' },
+    { name: 'Cloud Computing (84%)', issuer: 'NPTEL', year: '2024' },
+    { name: 'Python Essentials 1 & 2', issuer: 'Cisco', year: '2024' }
   ];
 
   return (
@@ -100,7 +112,10 @@ const ResumeNew = () => {
                   CHOWDAVADA <span className="text-sky-600 dark:text-cyan-300">RAJU</span>
                 </h1>
                 <p className="text-sky-600 dark:text-cyan-300 text-[10px] font-mono tracking-[0.4em] uppercase font-bold">
-                  Full Stack Engineer
+                  Software Engineer
+                </p>
+                <p className="text-xs text-gray-500 dark:text-zinc-400 mt-4 leading-relaxed line-clamp-4 hover:line-clamp-none transition-all duration-300">
+                  Software Engineer specializing in scalable web applications, APIs, and full-stack systems using Java, Python, React.js, and Node.js. Proficient in optimizing application performance.
                 </p>
               </div>
 
@@ -157,10 +172,10 @@ const ResumeNew = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
               {[
-                { label: "DSA Mastery", value: "450+" },
-                { label: "Full Stack", value: "12+" },
-                { label: "Years Coding", value: "2+" },
-                { label: "Professional", value: "8+" }
+                { label: "DSA Problems", value: "450+" },
+                { label: "Full Stack Apps", value: "6+" },
+                { label: "Certifications", value: "6+" },
+                { label: "Years Exp.", value: "1+" }
               ].map((stat, i) => (
                 <div key={i} className="bg-white/80 dark:bg-zinc-900/30 backdrop-blur-md border border-gray-200 dark:border-white/10 p-6 rounded-[2rem] text-center">
                   <div className="text-3xl font-black">{stat.value}</div>
@@ -184,7 +199,7 @@ const ResumeNew = () => {
                     </div>
                     <p className="text-sky-600 dark:text-cyan-300 font-bold text-xs uppercase tracking-wider mb-4">{job.company}</p>
                     <p className="text-gray-500 dark:text-zinc-400 text-sm leading-relaxed max-w-2xl">
-                      Contributed to core development cycles, optimized frontend performance, and collaborated with cross-functional teams to deliver high-quality software solutions.
+                      {job.description}
                     </p>
                   </div>
                 ))}
@@ -222,6 +237,22 @@ const ResumeNew = () => {
                     <h3 className="text-lg font-bold mb-2 leading-tight">{edu.degree}</h3>
                     <p className="text-sm text-gray-500 dark:text-zinc-400 mb-4">{edu.school}</p>
                     <span className="text-[10px] font-mono text-sky-600 dark:text-cyan-300">{edu.period}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+            
+            <section className="bg-white dark:bg-zinc-900/50 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-[2.5rem] p-10 animate-on-scroll opacity-0 translate-y-8 transition-all duration-700">
+              <div className="flex items-center gap-6 mb-12">
+                <h2 className="text-2xl font-black tracking-tighter uppercase">Certifications</h2>
+                <div className="h-px flex-1 bg-gray-200 dark:bg-white/10" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {certifications.map((cert, index) => (
+                  <div key={index} className="p-6 rounded-3xl bg-gray-50 dark:bg-black/40 border border-gray-100 dark:border-white/5 hover:border-sky-500/30 transition-colors">
+                    <h3 className="text-sm font-bold mb-2 leading-tight text-gray-800 dark:text-zinc-200">{cert.name}</h3>
+                    <p className="text-xs text-sky-600 dark:text-cyan-300 font-bold uppercase tracking-wider mb-2">{cert.issuer}</p>
+                    <span className="text-[10px] font-mono text-gray-500 dark:text-zinc-500">{cert.year}</span>
                   </div>
                 ))}
               </div>
